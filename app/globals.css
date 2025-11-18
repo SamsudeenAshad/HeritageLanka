@@ -13,40 +13,78 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
   }
   
-  /* Hero background with your watercolor image */
+  /* Hero Section - Main watercolor background */
   .hero-bg {
-    background-image: linear-gradient(to bottom, rgba(21, 163, 127, 0.3), rgba(33, 150, 243, 0.4)), url('/hero-bg.jpg');
+    background-image: linear-gradient(to bottom, rgba(21, 163, 127, 0.25), rgba(33, 150, 243, 0.35)), url('/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   }
   
-  /* Alternative lighter overlay */
-  .hero-bg-light {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)), url('/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  /* Section backgrounds with watercolor */
-  .nature-bg, .heritage-bg, .adventure-bg, .sunset-bg {
-    background-image: linear-gradient(to bottom, rgba(15, 118, 110, 0.4), rgba(30, 136, 229, 0.4)), url('/hero-bg.jpg');
+  /* Problem Section - Second background */
+  .nature-bg {
+    background-image: linear-gradient(to bottom, rgba(20, 40, 80, 0.55), rgba(10, 80, 120, 0.45)), url('/bg2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   }
   
-  /* Glass effects */
+  /* Solution/Features Section - Third background */
+  .heritage-bg {
+    background-image: linear-gradient(to bottom, rgba(15, 118, 110, 0.4), rgba(21, 163, 127, 0.5)), url('/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Trust/Services Section - Fourth background */
+  .adventure-bg {
+    background-image: linear-gradient(to bottom, rgba(30, 136, 229, 0.45), rgba(25, 118, 210, 0.55)), url('/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* CTA Section - Fifth background */
+  .sunset-bg {
+    background-image: linear-gradient(to bottom, rgba(21, 163, 127, 0.3), rgba(33, 150, 243, 0.4)), url('/bg5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Additional background option */
+  .extra-bg {
+    background-image: linear-gradient(to bottom, rgba(15, 118, 110, 0.35), rgba(30, 136, 229, 0.45)), url('/bg6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Glass effects with enhanced blur */
   .glass-dark {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
   
   .glass {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+  
+  .glass-light {
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Smooth scrolling effect */
+  html {
+    scroll-behavior: smooth;
   }
   
   /* Fade in animation */
@@ -63,5 +101,11 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  
+  /* Parallax effect enhancement */
+  section[class*="-bg"] {
+    position: relative;
+    overflow: hidden;
   }
 }

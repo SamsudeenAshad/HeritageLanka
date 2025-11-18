@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hero background: default uses an Unsplash sample so the page shows immediately.
+   To replace with your own image, add a file at `/public/sample-bg.jpg` and
+   uncomment the `.hero-bg-local` rule below (or update the URL). */
+.hero-bg {
+  background-image: linear-gradient(0deg, rgba(3,37,65,0.45), rgba(3,37,65,0.35)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Example local override (copy your file to public/sample-bg.jpg and use this):
+.hero-bg-local {
+  background-image: linear-gradient(0deg, rgba(3,37,65,0.45), rgba(3,37,65,0.35)), url('/sample-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+.fade-up {
+  transform: translateY(8px);
+  opacity: 0;
+  animation: fadeUp 700ms ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to { transform: translateY(0); opacity: 1; }
+}

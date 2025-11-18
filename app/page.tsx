@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section with Beach Background */}
+      {/* Hero Section with Watercolor Background */}
       <section className="hero-bg min-h-screen flex items-center relative pt-16">
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
         <div className="container mx-auto px-6 py-24 relative z-10">

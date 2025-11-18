@@ -54,8 +54,8 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="px-10 py-4 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 shadow-2xl text-white font-semibold text-lg hover:scale-105 transition-transform">
-                Start Your Journey
+              <button className="px-10 py-4 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 shadow-2xl text-white font-semibold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                Start Your Journey <FaArrowRight />
               </button>
               <button className="px-10 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/20 transition">
                 Watch Demo
@@ -205,8 +205,8 @@ export default function Home() {
             </div>
 
             <div className="glass-dark backdrop-blur-md rounded-3xl p-8 max-w-3xl mx-auto hover:scale-105 transition-transform">
-              <div className="inline-block px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4">
-                📁 The Manager
+              <div className="inline-block px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4 flex items-center gap-2">
+                <FaFolderOpen /> The Manager
               </div>
               <h3 className="text-3xl font-bold text-white mb-4">
                 Effortless Trip Organization
@@ -217,14 +217,14 @@ export default function Home() {
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  "Centralized document storage",
-                  "Booking management & reminders",
-                  "Expense tracking & splitting",
-                  "Team collaboration tools"
+                  { text: "Centralized document storage", icon: <HiDocumentText /> },
+                  { text: "Booking management & reminders", icon: <HiCreditCard /> },
+                  { text: "Expense tracking & splitting", icon: <HiCash /> },
+                  { text: "Team collaboration tools", icon: <HiUserGroup /> }
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start text-white/90">
-                    <span className="text-primary-400 mr-3">✓</span>
-                    <span>{feature}</span>
+                    <span className="text-primary-400 mr-3 text-xl">{feature.icon}</span>
+                    <span>{feature.text}</span>
                   </div>
                 ))}
               </div>
@@ -249,16 +249,16 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
-              { icon: "👨‍🏫", title: "Expert Guides", description: "Local experts with verified reviews" },
-              { icon: "🚗", title: "Transport", description: "Reliable drivers & vehicles" },
-              { icon: "🏨", title: "Accommodation", description: "Trusted hotels & homestays" },
-              { icon: "🎯", title: "Activities", description: "Authentic experiences & tours" }
+              { icon: <FaUserTie className="text-6xl text-primary-300" />, title: "Expert Guides", description: "Local experts with verified reviews" },
+              { icon: <FaCar className="text-6xl text-secondary-300" />, title: "Transport", description: "Reliable drivers & vehicles" },
+              { icon: <FaHotel className="text-6xl text-primary-400" />, title: "Accommodation", description: "Trusted hotels & homestays" },
+              { icon: <FaBullseye className="text-6xl text-secondary-400" />, title: "Activities", description: "Authentic experiences & tours" }
             ].map((service, index) => (
               <div
                 key={index}
                 className="glass-dark backdrop-blur-md rounded-2xl p-8 hover:scale-110 transition-all duration-300 text-center"
               >
-                <div className="text-6xl mb-4">{service.icon}</div>
+                <div className="mb-4 flex justify-center">{service.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
                 <p className="text-white/90">{service.description}</p>
               </div>
@@ -290,9 +290,9 @@ export default function Home() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  Get Early Access
+                  Get Early Access <FaArrowRight />
                 </button>
               </div>
               <p className="text-sm mt-4 text-white/75">
@@ -302,9 +302,7 @@ export default function Home() {
 
             <div className="mt-16 flex justify-center gap-2">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
+                <FaStar key={i} className="w-8 h-8 text-yellow-400" />
               ))}
             </div>
             <p className="mt-4 text-lg text-white/95 italic">

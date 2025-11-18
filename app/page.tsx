@@ -1,3 +1,65 @@
+import React from 'react'
+import Link from 'next/link'
+
+export default function Home() {
+  return (
+    <main className="hero-bg min-h-[80vh] flex items-center">
+      <div className="container mx-auto px-6 py-24">
+        <div className="max-w-3xl text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">Travel without the noise. One place for everything.</h1>
+          <p className="mt-6 text-lg md:text-xl text-slate-100/90">Plan, guide and manage your journey with an intelligent travel OS that replaces the chaos of scattered apps — itineraries, maps, bookings and local services, all in one beautiful, trusted experience.</p>
+
+          <div className="mt-8 flex gap-4">
+            <Link href="#features" className="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-primary-500 to-secondary-500 shadow-md text-white font-medium">Get Started</Link>
+            <a href="#how" className="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-white/20 text-white">Learn more</a>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-900">
+            <div className="p-4 rounded-xl glass text-white">
+              <h4 className="font-semibold">Planner</h4>
+              <p className="text-sm mt-2">Smart itineraries that adapt to your pace and preferences.</p>
+            </div>
+            <div className="p-4 rounded-xl glass text-white">
+              <h4 className="font-semibold">Guider</h4>
+              <p className="text-sm mt-2">Live, context-aware guidance with trusted local insights.</p>
+            </div>
+            <div className="p-4 rounded-xl glass text-white">
+              <h4 className="font-semibold">Manager</h4>
+              <p className="text-sm mt-2">Documents, bookings and collaboration — all organised.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  )
+}
+
+// Additional content sections below the fold
+export function BelowFold() {
+  return (
+    <section className="container mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 id="features" className="text-3xl font-bold text-primary-700">Why choose HeritageLanka?</h2>
+        <p className="mt-4 text-slate-700">All trip information together, trusted local partners, and real-time guidance so you focus on the moments that matter.</p>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          <div className="p-6 border rounded-lg">
+            <h4 className="font-semibold">Unified</h4>
+            <p className="text-sm mt-2 text-slate-600">Everything — itineraries, maps, bookings — in one place.</p>
+          </div>
+          <div className="p-6 border rounded-lg">
+            <h4 className="font-semibold">Trusted</h4>
+            <p className="text-sm mt-2 text-slate-600">Local partners vetted to remove uncertainty and risk.</p>
+          </div>
+          <div className="p-6 border rounded-lg">
+            <h4 className="font-semibold">Real-time</h4>
+            <p className="text-sm mt-2 text-slate-600">Live guidance and context-aware suggestions while you travel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 "use client";
 
 import { useState } from "react";

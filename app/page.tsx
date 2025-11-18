@@ -63,23 +63,23 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4 text-primary-300">
-                  <FaCalendarAlt />
+              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center">
+                <div className="flex justify-center items-center mb-4">
+                  <FaCalendarAlt className="text-5xl text-primary-300" />
                 </div>
                 <h4 className="font-bold text-xl mb-3">The Planner</h4>
                 <p className="text-sm text-white/90 leading-relaxed">Smart itineraries that adapt to your pace and preferences.</p>
               </div>
-              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4 text-secondary-300">
-                  <FaCompass />
+              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center">
+                <div className="flex justify-center items-center mb-4">
+                  <FaCompass className="text-5xl text-secondary-300" />
                 </div>
                 <h4 className="font-bold text-xl mb-3">The Guider</h4>
                 <p className="text-sm text-white/90 leading-relaxed">Live, context-aware guidance with trusted local insights.</p>
               </div>
-              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4 text-primary-200">
-                  <FaFolderOpen />
+              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center">
+                <div className="flex justify-center items-center mb-4">
+                  <FaFolderOpen className="text-5xl text-primary-200" />
                 </div>
                 <h4 className="font-bold text-xl mb-3">The Manager</h4>
                 <p className="text-sm text-white/90 leading-relaxed">Documents, bookings and collaboration — all organized.</p>

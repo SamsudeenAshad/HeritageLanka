@@ -2,33 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hero background: default uses an Unsplash sample so the page shows immediately.
-   To replace with your own image, add a file at `/public/sample-bg.jpg` and
-   uncomment the `.hero-bg-local` rule below (or update the URL). */
+/* Hero background with tropical beach scene */
 .hero-bg {
-  background-image: linear-gradient(0deg, rgba(3,37,65,0.45), rgba(3,37,65,0.35)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+  background-image: linear-gradient(135deg, rgba(21,163,127,0.6), rgba(33,150,243,0.5)), 
+    url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Scenic mountain/nature background */
+.nature-bg {
+  background-image: linear-gradient(135deg, rgba(12,98,81,0.5), rgba(21,101,192,0.4)), 
+    url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Cultural heritage/temple background */
+.heritage-bg {
+  background-image: linear-gradient(135deg, rgba(21,163,127,0.7), rgba(13,71,161,0.6)), 
+    url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
 }
 
-/* Example local override (copy your file to public/sample-bg.jpg and use this):
+/* Adventure/exploration background */
+.adventure-bg {
+  background-image: linear-gradient(135deg, rgba(66,165,245,0.5), rgba(21,163,127,0.6)), 
+    url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Sunset/evening travel background */
+.sunset-bg {
+  background-image: linear-gradient(135deg, rgba(244,143,177,0.3), rgba(66,165,245,0.4)), 
+    url('https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Local override examples - add your images to /public/ folder */
 .hero-bg-local {
-  background-image: linear-gradient(0deg, rgba(3,37,65,0.45), rgba(3,37,65,0.35)), url('/sample-bg.jpg');
+  background-image: linear-gradient(135deg, rgba(21,163,127,0.6), rgba(33,150,243,0.5)), 
+    url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.nature-bg-local {
+  background-image: linear-gradient(135deg, rgba(12,98,81,0.5), rgba(21,101,192,0.4)), 
+    url('/nature-bg.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .glass {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.glass-dark {
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .fade-up {
-  transform: translateY(8px);
+  transform: translateY(20px);
   opacity: 0;
-  animation: fadeUp 700ms ease-out forwards;
+  animation: fadeUp 800ms ease-out forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 @keyframes fadeUp {
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.parallax-slow {
+  transform: translateY(var(--parallax-offset, 0));
+  transition: transform 0.5s ease-out;
 }

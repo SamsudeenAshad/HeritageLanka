@@ -152,8 +152,8 @@ export default function Home() {
             {/* Feature Cards */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="glass-dark backdrop-blur-md rounded-3xl p-8 hover:scale-105 transition-transform">
-                <div className="inline-block px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4">
-                  🗓️ The Planner
+                <div className="inline-block px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4 flex items-center gap-2">
+                  <FaCalendarAlt /> The Planner
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-4">
                   Smart Itineraries That Adapt to You
@@ -170,7 +170,7 @@ export default function Home() {
                     "Collaborative planning for groups"
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start text-white/90">
-                      <span className="text-primary-400 mr-3">✓</span>
+                      <FaCheckCircle className="text-primary-400 mr-3 mt-1 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}

@@ -178,8 +178,8 @@ export default function Home() {
               </div>
 
               <div className="glass-dark backdrop-blur-md rounded-3xl p-8 hover:scale-105 transition-transform">
-                <div className="inline-block px-4 py-2 bg-secondary-500/30 rounded-full text-sm font-semibold mb-4">
-                  🧭 The Guider
+                <div className="inline-block px-4 py-2 bg-secondary-500/30 rounded-full text-sm font-semibold mb-4 flex items-center gap-2">
+                  <FaCompass /> The Guider
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-4">
                   Your Real-Time Travel Companion
@@ -190,14 +190,14 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Live navigation with local insights",
-                    "Context-aware recommendations",
-                    "Offline maps and information",
-                    "Audio guides for attractions"
+                    { text: "Live navigation with local insights", icon: <MdNavigation /> },
+                    { text: "Context-aware recommendations", icon: <MdChatBubble /> },
+                    { text: "Offline maps and information", icon: <MdMap /> },
+                    { text: "Audio guides for attractions", icon: <MdVolumeUp /> }
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start text-white/90">
-                      <span className="text-secondary-400 mr-3">✓</span>
-                      <span>{feature}</span>
+                      <span className="text-secondary-400 mr-3 mt-1 text-lg">{feature.icon}</span>
+                      <span>{feature.text}</span>
                     </li>
                   ))}
                 </ul>

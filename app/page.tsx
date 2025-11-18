@@ -123,9 +123,9 @@ export default function Home() {
             ].map((problem, index) => (
               <div
                 key={index}
-                className="glass-dark backdrop-blur-md rounded-2xl p-8 hover:scale-105 transition-all duration-300"
+                className="glass-dark backdrop-blur-md rounded-2xl p-8 hover:scale-105 transition-all duration-300 text-center"
               >
-                <div className="mb-4 flex justify-center">{problem.icon}</div>
+                <div className="mb-4 flex justify-center items-center">{problem.icon}</div>
                 <h3 className="text-2xl font-bold text-white mb-4">{problem.title}</h3>
                 <p className="text-white/90 leading-relaxed">{problem.description}</p>
               </div>
@@ -152,7 +152,7 @@ export default function Home() {
             {/* Feature Cards */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="glass-dark backdrop-blur-md rounded-3xl p-8 hover:scale-105 transition-transform">
-                <div className="inline-block px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4 flex items-center gap-2">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4">
                   <FaCalendarAlt /> The Planner
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-4">
@@ -169,8 +169,8 @@ export default function Home() {
                     "Budget tracking and optimization",
                     "Collaborative planning for groups"
                   ].map((feature, index) => (
-                    <li key={index} className="flex items-start text-white/90">
-                      <FaCheckCircle className="text-primary-400 mr-3 mt-1 flex-shrink-0" />
+                    <li key={index} className="flex items-center text-white/90">
+                      <FaCheckCircle className="text-primary-400 mr-3 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -178,7 +178,7 @@ export default function Home() {
               </div>
 
               <div className="glass-dark backdrop-blur-md rounded-3xl p-8 hover:scale-105 transition-transform">
-                <div className="inline-block px-4 py-2 bg-secondary-500/30 rounded-full text-sm font-semibold mb-4 flex items-center gap-2">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-500/30 rounded-full text-sm font-semibold mb-4">
                   <FaCompass /> The Guider
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-4">
@@ -195,8 +195,8 @@ export default function Home() {
                     { text: "Offline maps and information", icon: <MdMap /> },
                     { text: "Audio guides for attractions", icon: <MdVolumeUp /> }
                   ].map((feature, index) => (
-                    <li key={index} className="flex items-start text-white/90">
-                      <span className="text-secondary-400 mr-3 mt-1 text-lg">{feature.icon}</span>
+                    <li key={index} className="flex items-center text-white/90">
+                      <span className="text-secondary-400 mr-3 text-lg flex-shrink-0">{feature.icon}</span>
                       <span>{feature.text}</span>
                     </li>
                   ))}

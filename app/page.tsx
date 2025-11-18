@@ -1,6 +1,33 @@
 "use client";
 
 import React, { useState } from 'react';
+import { 
+  FaCalendarAlt, 
+  FaCompass, 
+  FaFolderOpen, 
+  FaMobileAlt, 
+  FaClock, 
+  FaExclamationTriangle,
+  FaCheckCircle,
+  FaUserTie,
+  FaCar,
+  FaHotel,
+  FaBullseye,
+  FaStar,
+  FaArrowRight
+} from 'react-icons/fa';
+import { 
+  MdNavigation, 
+  MdMap, 
+  MdChatBubble, 
+  MdVolumeUp 
+} from 'react-icons/md';
+import { 
+  HiDocumentText, 
+  HiCreditCard, 
+  HiCash, 
+  HiUserGroup 
+} from 'react-icons/hi';
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -37,17 +64,23 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🗓️</div>
+                <div className="text-5xl mb-4 text-primary-300">
+                  <FaCalendarAlt />
+                </div>
                 <h4 className="font-bold text-xl mb-3">The Planner</h4>
                 <p className="text-sm text-white/90 leading-relaxed">Smart itineraries that adapt to your pace and preferences.</p>
               </div>
               <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">🧭</div>
+                <div className="text-5xl mb-4 text-secondary-300">
+                  <FaCompass />
+                </div>
                 <h4 className="font-bold text-xl mb-3">The Guider</h4>
                 <p className="text-sm text-white/90 leading-relaxed">Live, context-aware guidance with trusted local insights.</p>
               </div>
               <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform">
-                <div className="text-5xl mb-4">📁</div>
+                <div className="text-5xl mb-4 text-primary-200">
+                  <FaFolderOpen />
+                </div>
                 <h4 className="font-bold text-xl mb-3">The Manager</h4>
                 <p className="text-sm text-white/90 leading-relaxed">Documents, bookings and collaboration — all organized.</p>
               </div>

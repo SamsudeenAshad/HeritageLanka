@@ -106,17 +106,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                icon: "📱",
+                icon: <FaMobileAlt className="text-6xl text-red-400" />,
                 title: "Too Many Apps",
                 description: "Switching between maps, itineraries, notes, budgets, and booking apps creates confusion and kills the joy of travel."
               },
               {
-                icon: "😰",
+                icon: <FaExclamationTriangle className="text-6xl text-yellow-400" />,
                 title: "Constant Stress",
                 description: "Searching for reliable guides, transport, and hotels while worrying about scams and safety drains your energy."
               },
               {
-                icon: "⏰",
+                icon: <FaClock className="text-6xl text-orange-400" />,
                 title: "Wasted Time",
                 description: "Hours spent organizing, researching, and cross-referencing information instead of actually enjoying your trip."
               }
@@ -125,7 +125,7 @@ export default function Home() {
                 key={index}
                 className="glass-dark backdrop-blur-md rounded-2xl p-8 hover:scale-105 transition-all duration-300"
               >
-                <div className="text-6xl mb-4">{problem.icon}</div>
+                <div className="mb-4 flex justify-center">{problem.icon}</div>
                 <h3 className="text-2xl font-bold text-white mb-4">{problem.title}</h3>
                 <p className="text-white/90 leading-relaxed">{problem.description}</p>
               </div>

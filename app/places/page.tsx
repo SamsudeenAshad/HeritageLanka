@@ -1,11 +1,33 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaMapMarkerAlt, FaCalendar, FaClock, FaArrowRight, FaSearch } from 'react-icons/fa';
 
 export default function PlacesPage() {
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [showFilterBar, setShowFilterBar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past 100px
+        setShowFilterBar(false);
+      } else {
+        // Scrolling up
+        setShowFilterBar(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const regions = ['All', 'Western', 'Central', 'Southern', 'Eastern', 'Northern', 'North Western', 'North Central', 'Uva', 'Sabaragamuwa'];
 
@@ -186,7 +208,9 @@ export default function PlacesPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="bg-gray-50 py-8 px-6 sticky top-24 z-20 border-b border-gray-200">
+      <section className={`bg-gray-50 py-8 px-6 sticky top-24 z-20 border-b border-gray-200 transition-transform duration-300 ${
+        showFilterBar ? 'translate-y-0' : '-translate-y-full'
+      }`}>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-3 justify-center">
             {regions.map((region) => (

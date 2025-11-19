@@ -14,7 +14,9 @@ import {
   FaHotel,
   FaBullseye,
   FaStar,
-  FaArrowRight
+  FaArrowRight,
+  FaChevronDown,
+  FaPlay
 } from 'react-icons/fa';
 import { 
   MdNavigation, 
@@ -38,30 +40,69 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
-      {/* Hero Section with Watercolor Background */}
-      <section className="hero-bg min-h-screen flex items-center relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20"></div>
-        <div className="container mx-auto px-6 py-24 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight drop-shadow-2xl mb-8 fade-in tracking-wide">
-              Travel Without <br/>
-              <span className="text-accent-200">The Noise</span>
-            </h1>
-            <div className="section-divider mb-8"></div>
-            <p className="text-xl md:text-2xl text-white/95 drop-shadow-lg leading-relaxed mb-12 font-light">
-              One intelligent platform that plans, guides, and manages your entire journey. 
-              Say goodbye to scattered apps and hello to seamless exploration.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="px-12 py-4 rounded-sm bg-gradient-to-r from-primary-600 to-accent-600 shadow-2xl text-white font-semibold text-base hover:scale-105 transition-transform flex items-center justify-center gap-2 uppercase tracking-wider">
-                Start Your Journey <FaArrowRight />
-              </button>
-              <button className="px-12 py-4 rounded-sm glass text-white font-semibold text-base hover:bg-white/30 transition uppercase tracking-wider border border-white/30">
-                Watch Film
-              </button>
+    <main className="min-h-screen bg-white">
+      {/* Hero Section - Full screen with bordered text */}
+      <section className="hero-bg relative">
+        <div className="hero-overlay absolute inset-0"></div>
+        <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
+          <div className="text-center text-white mb-12">
+            <div className="hero-title-box mx-auto">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-widest leading-tight">
+                Travel Without<br/>
+                The Noise
+              </h1>
+              <p className="text-sm md:text-base uppercase tracking-[0.3em] mt-6 font-light">
+                Plan Your Next Trip
+              </p>
             </div>
+          </div>
+          
+          {/* Watch Film Button */}
+          <button className="flex items-center gap-3 text-white hover:text-accent-300 transition-colors">
+            <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/10 transition">
+              <FaPlay className="text-sm ml-1" />
+            </div>
+            <span className="text-sm uppercase tracking-widest">Watch The Film</span>
+          </button>
+          
+          {/* Explore Arrow */}
+          <div className="explore-arrow">
+            <div className="text-white flex flex-col items-center cursor-pointer">
+              <span className="text-xs uppercase tracking-widest mb-2">Explore</span>
+              <FaChevronDown className="text-2xl animate-bounce" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Award Section - White Background */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 uppercase tracking-wide">
+                SRI LANKA IS BACK!<br/>
+                <span className="text-6xl md:text-7xl">LOVE SRI<br/>LANKA</span>
+              </h2>
+            </div>
+            <div>
+              <h3 className="text-2xl font-serif font-bold mb-4">
+                Sri Lanka bags Gold – Wanderlust Awards
+              </h3>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Sri Lanka named <em>"Most Desirable Island in the World"</em> by Wanderlust UK
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Sri Lanka has been voted the Most Desirable Island in the World. Considered one of the most thrilling turnarounds, Sri Lanka has risen from eighth place last year to claim the Gold award reaffirming the island's captivating appeal and diverse offerings, as recognized by over 200,000 passionate travelers who voted for their favorite destinations.
+              </p>
+              <a href="#" className="read-more">
+                ABOUT US
+                <FaArrowRight className="text-xs" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="p-8 rounded-sm glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center border border-white/20">

@@ -238,13 +238,14 @@ export default function Home() {
 
       {/* Trust & Services Section with Adventure Background */}
       <section className="adventure-bg min-h-screen flex items-center relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center text-white mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Connect with <span className="text-secondary-300">Trusted Locals</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 tracking-wide">
+              Connect with <span className="text-primary-200">Trusted Locals</span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            <div className="section-divider mb-6"></div>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light">
               Direct access to verified guides, transport providers, hotels, and essential 
               services. No middlemen. No scams. Just authentic experiences.
             </p>
@@ -252,18 +253,18 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
-              { icon: <FaUserTie className="text-6xl text-primary-300" />, title: "Expert Guides", description: "Local experts with verified reviews" },
-              { icon: <FaCar className="text-6xl text-secondary-300" />, title: "Transport", description: "Reliable drivers & vehicles" },
-              { icon: <FaHotel className="text-6xl text-primary-400" />, title: "Accommodation", description: "Trusted hotels & homestays" },
-              { icon: <FaBullseye className="text-6xl text-secondary-400" />, title: "Activities", description: "Authentic experiences & tours" }
+              { icon: <FaUserTie className="text-6xl text-accent-300" />, title: "Expert Guides", description: "Local experts with verified reviews" },
+              { icon: <FaCar className="text-6xl text-primary-300" />, title: "Transport", description: "Reliable drivers & vehicles" },
+              { icon: <FaHotel className="text-6xl text-accent-400" />, title: "Accommodation", description: "Trusted hotels & homestays" },
+              { icon: <FaBullseye className="text-6xl text-primary-400" />, title: "Activities", description: "Authentic experiences & tours" }
             ].map((service, index) => (
               <div
                 key={index}
-                className="glass-dark backdrop-blur-md rounded-2xl p-8 hover:scale-110 transition-all duration-300 text-center"
+                className="glass-dark backdrop-blur-md rounded-sm p-8 hover:scale-110 transition-all duration-300 text-center border border-white/20"
               >
                 <div className="mb-4 flex justify-center items-center">{service.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                <p className="text-white/90">{service.description}</p>
+                <h3 className="text-xl font-serif font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-white/90 font-light">{service.description}</p>
               </div>
             ))}
           </div>

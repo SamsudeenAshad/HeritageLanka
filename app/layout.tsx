@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Cinzel, Lato } from "next/font/google";
-import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass, FaStar, FaBook, FaPhotoVideo, FaSearch } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass } from 'react-icons/fa';
 import "./globals.css";
 
 const cinzel = Cinzel({ 
@@ -44,34 +44,22 @@ export default function RootLayout({
               </div>
               
               {/* Navigation Menu */}
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-8">
                 <Link href="/" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaHome className="text-lg" />
                   <span>Home</span>
                 </Link>
                 <Link href="/about" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaInfoCircle className="text-lg" />
-                  <span>About Us</span>
-                </Link>
-                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
-                  <FaMapMarkedAlt className="text-lg" />
-                  <span>Planning</span>
+                  <span>About</span>
                 </Link>
                 <Link href="/places" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                  <FaMapMarkedAlt className="text-lg" />
+                  <span>Places</span>
+                </Link>
+                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaCompass className="text-lg" />
-                  <span>Destinations</span>
-                </Link>
-                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
-                  <FaStar className="text-lg" />
-                  <span>Experiences</span>
-                </Link>
-                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
-                  <FaBook className="text-lg" />
-                  <span>Journal</span>
-                </Link>
-                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
-                  <FaPhotoVideo className="text-lg" />
-                  <span>Media</span>
+                  <span>Explore</span>
                 </Link>
               </div>
 
@@ -102,21 +90,17 @@ export default function RootLayout({
                 <FaHome className="text-xl" />
                 <span className="text-xs">Home</span>
               </Link>
-              <Link href="/explore" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
-                <FaMapMarkedAlt className="text-xl" />
-                <span className="text-xs">Plan</span>
+              <Link href="/about" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaInfoCircle className="text-xl" />
+                <span className="text-xs">About</span>
               </Link>
               <Link href="/places" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
-                <FaCompass className="text-xl" />
+                <FaMapMarkedAlt className="text-xl" />
                 <span className="text-xs">Places</span>
               </Link>
               <Link href="/explore" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
-                <FaStar className="text-xl" />
+                <FaCompass className="text-xl" />
                 <span className="text-xs">Explore</span>
-              </Link>
-              <Link href="/about" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
-                <FaSearch className="text-xl" />
-                <span className="text-xs">About</span>
               </Link>
             </div>
           </div>
@@ -134,10 +118,9 @@ export default function RootLayout({
             {/* Top Navigation Links */}
             <div className="flex flex-wrap justify-center gap-6 mb-12 text-white text-sm uppercase tracking-widest">
               <Link href="/" className="hover:text-white/80 transition">Home</Link>
-              <Link href="/places" className="hover:text-white/80 transition">Destinations</Link>
-              <Link href="/explore" className="hover:text-white/80 transition">Planning a Trip</Link>
-              <Link href="/explore" className="hover:text-white/80 transition">Key Experiences</Link>
-              <Link href="/about" className="hover:text-white/80 transition">Contact Us</Link>
+              <Link href="/about" className="hover:text-white/80 transition">About</Link>
+              <Link href="/places" className="hover:text-white/80 transition">Places</Link>
+              <Link href="/explore" className="hover:text-white/80 transition">Explore</Link>
             </div>
 
             {/* Main Footer Content */}

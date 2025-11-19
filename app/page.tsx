@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaArrowRight, FaChevronDown, FaPlay, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaArrowRight, FaChevronDown, FaPlay, FaMapMarkerAlt, FaStar, FaQuoteLeft, FaUsers } from 'react-icons/fa';
 
 // Sri Lankan destinations data
 const sriLankanDestinations = [
@@ -20,12 +20,29 @@ const sriLankanDestinations = [
 
 export default function Home() {
   const [email, setEmail] = useState("");
+  const [subscribeMessage, setSubscribeMessage] = useState("");
+  const [subscriberCount, setSubscriberCount] = useState(1247);
+  const [feedbacks, setFeedbacks] = useState<any[]>([]);
   const [searchPlaceholder, setSearchPlaceholder] = useState("");
   const [selectedDestination, setSelectedDestination] = useState(sriLankanDestinations[3]); // Default to Sigiriya
   const placeholderTexts = ["Plan you tour.....", "Explore destinations.....", "Find experiences.....", "Discover heritage....."];
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  // Fetch subscriber count on mount
+  useEffect(() => {
+    fetch('/api/subscriber-count')
+      .then(res => res.json())
+      .then(data => setSubscriberCount(data.count))
+      .catch(err => console.error('Error fetching subscriber count:', err));
+
+    // Fetch feedbacks
+    fetch('/api/feedbacks')
+      .then(res => res.json())
+      .then(data => setFeedbacks(data.feedbacks))
+      .catch(err => console.error('Error fetching feedbacks:', err));
+  }, []);
 
   React.useEffect(() => {
     const currentText = placeholderTexts[textIndex];
@@ -50,9 +67,27 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [charIndex, isDeleting, textIndex]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
+    
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      
+      const data = await response.json();
+      setSubscribeMessage(data.message);
+      
+      if (data.success) {
+        setSubscriberCount(data.count);
+        setEmail("");
+        setTimeout(() => setSubscribeMessage(""), 5000);
+      }
+    } catch (error) {
+      setSubscribeMessage("Error subscribing. Please try again.");
+    }
   };
 
   return (
@@ -407,11 +442,11 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 uppercase tracking-wide">
             START YOUR JOURNEY
           </h2>
-          <p className="text-white/90 text-lg mb-12 font-light">
-            Join travelers who've discovered stress-free exploration with Heritage Lanka
+          <p className="text-white/90 text-lg mb-8 font-light">
+            Join {subscriberCount.toLocaleString()} travelers who've discovered stress-free exploration with Heritage Lanka
           </p>
           
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-6">
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
@@ -430,6 +465,75 @@ export default function Home() {
               </button>
             </div>
           </form>
+          
+          {subscribeMessage && (
+            <div className={`mt-4 px-6 py-3 rounded-lg inline-block ${
+              subscribeMessage.includes('Success') || subscribeMessage.includes('Thank you')
+                ? 'bg-green-500 text-white'
+                : 'bg-red-500 text-white'
+            }`}>
+              {subscribeMessage}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Customer Feedback Section */}
+      <section className="bg-gray-50 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-wide">
+              What Travelers Say
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Real experiences from travelers who've discovered the Heritage Lanka difference
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {feedbacks.map((feedback, idx) => (
+              <div key={idx} className="content-card p-8">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar 
+                      key={i} 
+                      className={i < feedback.rating ? 'text-yellow-500' : 'text-gray-300'} 
+                    />
+                  ))}
+                </div>
+                
+                <div className="relative mb-6">
+                  <FaQuoteLeft className="absolute -top-2 -left-2 text-3xl text-primary-200" />
+                  <p className="text-gray-700 leading-relaxed pl-6 italic">
+                    "{feedback.comment}"
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    {feedback.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{feedback.name}</p>
+                    <p className="text-sm text-gray-600">{new Date(feedback.date).toLocaleDateString()}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Subscriber Count Display */}
+          <div className="text-center">
+            <div className="inline-flex items-center gap-6 bg-white px-12 py-6 rounded-lg shadow-lg">
+              <div className="flex items-center gap-3">
+                <FaUsers className="text-4xl text-primary-600" />
+                <div className="text-left">
+                  <div className="text-4xl font-bold text-primary-600">{subscriberCount.toLocaleString()}</div>
+                  <div className="text-sm text-gray-600 uppercase tracking-wider">Happy Subscribers</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

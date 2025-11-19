@@ -57,8 +57,26 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="hero-bg relative">
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+          {/* Fallback to image if video doesn't load */}
+        </video>
+        
+        {/* Fallback Background Image */}
+        <div className="hero-bg absolute inset-0 opacity-0"></div>
+        
+        {/* Overlay */}
         <div className="hero-overlay absolute inset-0"></div>
+        
+        {/* Content */}
         <div className="relative z-10 min-h-screen flex items-center px-6 md:px-12 lg:px-20">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-8 items-center">

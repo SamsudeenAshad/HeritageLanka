@@ -34,9 +34,9 @@ export default function RootLayout({
               {/* Logo */}
               <div className="flex items-center">
                 <div className="text-white">
-                  <svg width="120" height="60" viewBox="0 0 120 60" className="fill-current text-gray-800">
-                    <text x="10" y="35" fontFamily="serif" fontSize="28" fontWeight="bold" fill="currentColor">Love</text>
-                    <text x="10" y="55" fontFamily="sans-serif" fontSize="10" letterSpacing="2" fill="currentColor">SRI LANKA</text>
+                  <svg width="160" height="60" viewBox="0 0 160 60" className="fill-current text-gray-800">
+                    <text x="10" y="35" fontFamily="serif" fontSize="24" fontWeight="bold" fill="currentColor">HERITAGE</text>
+                    <text x="10" y="55" fontFamily="sans-serif" fontSize="10" letterSpacing="2" fill="currentColor">LANKA</text>
                   </svg>
                 </div>
               </div>

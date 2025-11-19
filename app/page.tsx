@@ -16,31 +16,37 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-bg relative">
         <div className="hero-overlay absolute inset-0"></div>
-        <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
-          <div className="text-center text-white mb-12">
-            <div className="hero-title-box mx-auto">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-widest leading-tight">
-                Travel Without<br/>
-                The Noise
-              </h1>
-              <p className="text-sm md:text-base uppercase tracking-[0.3em] mt-6 font-light">
-                Plan Your Next Trip
-              </p>
+        <div className="relative z-10 min-h-screen flex items-center px-6 md:px-12 lg:px-20">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Left Content */}
+              <div className="text-white">
+                <p className="text-orange-500 font-serif italic text-xl md:text-2xl mb-6">
+                  Welcome to Pacsha
+                </p>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                  Discover Your Favorite Place with Us
+                </h1>
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                  Travel to the any corner of the world, without going around in circles
+                </p>
+              </div>
+              
+              {/* Right Content - Play Button */}
+              <div className="flex justify-center md:justify-end">
+                <button className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-2xl">
+                  <FaPlay className="text-orange-500 text-2xl md:text-3xl ml-1" />
+                </button>
+              </div>
             </div>
           </div>
-          
-          <button className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
-            <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/10 transition">
-              <FaPlay className="text-sm ml-1" />
-            </div>
-            <span className="text-sm uppercase tracking-widest">Watch The Film</span>
-          </button>
-          
-          <div className="explore-arrow">
-            <div className="text-white flex flex-col items-center cursor-pointer">
-              <span className="text-xs uppercase tracking-widest mb-2">Explore</span>
-              <FaChevronDown className="text-2xl" />
-            </div>
+        </div>
+        
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+          <div className="text-white flex flex-col items-center cursor-pointer animate-bounce">
+            <span className="text-xs uppercase tracking-widest mb-2">Scroll Down</span>
+            <FaChevronDown className="text-xl" />
           </div>
         </div>
       </section>
@@ -54,7 +60,6 @@ export default function Home() {
                 HERITAGELANKA IS BACK!
               </h2>
               <h2 className="text-5xl md:text-7xl font-serif font-bold uppercase tracking-wide leading-none">
-                LOVE<br/>
                 HERITAGE<br/>
                 LANKA
               </h2>

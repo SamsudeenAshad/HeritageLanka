@@ -73,7 +73,7 @@
   
   /* Overlay for hero */
   .hero-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
   }
   
   /* Text border effect like "FALL IN LOVE AGAIN" */

@@ -5,6 +5,34 @@ import { FaArrowRight, FaChevronDown, FaPlay } from 'react-icons/fa';
 
 export default function Home() {
   const [email, setEmail] = useState("");
+  const [searchPlaceholder, setSearchPlaceholder] = useState("");
+  const placeholderTexts = ["Plan you tour.....", "Explore destinations.....", "Find experiences.....", "Discover heritage....."];
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  React.useEffect(() => {
+    const currentText = placeholderTexts[textIndex];
+    const typingSpeed = isDeleting ? 50 : 150;
+    const pauseAfterComplete = 2000;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && charIndex < currentText.length) {
+        setSearchPlaceholder(currentText.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      } else if (isDeleting && charIndex > 0) {
+        setSearchPlaceholder(currentText.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      } else if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => setIsDeleting(true), pauseAfterComplete);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setTextIndex((textIndex + 1) % placeholderTexts.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, textIndex]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,23 +48,28 @@ export default function Home() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left Content */}
-              <div className="text-white">
+              <div className="text-white max-w-3xl">
                 <p className="text-orange-500 font-serif italic text-xl md:text-2xl mb-6">
-                  Welcome to Pacsha
+                  Welcome to Heritage Lanka
                 </p>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
                   Discover Your Favorite Place with Us
                 </h1>
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
                   Travel to the any corner of the world, without going around in circles
                 </p>
-              </div>
-              
-              {/* Right Content - Play Button */}
-              <div className="flex justify-center md:justify-end">
-                <button className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-2xl">
-                  <FaPlay className="text-orange-500 text-2xl md:text-3xl ml-1" />
-                </button>
+                
+                {/* Search Bar with Typing Animation */}
+                <div className="relative max-w-2xl">
+                  <input 
+                    type="text" 
+                    placeholder={searchPlaceholder}
+                    className="w-full px-8 py-5 bg-white/95 rounded-full text-gray-800 text-lg focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-2xl placeholder:text-gray-400"
+                  />
+                  <button className="absolute right-2 top-1/2 -translate-y-1/2 w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors shadow-lg">
+                    <FaPlay className="text-white text-xl ml-1" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>

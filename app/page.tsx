@@ -20,9 +20,12 @@ const sriLankanDestinations = [
 
 export default function Home() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   const [subscribeMessage, setSubscribeMessage] = useState("");
   const [subscriberCount, setSubscriberCount] = useState(1247);
   const [feedbacks, setFeedbacks] = useState<any[]>([]);
+  const [currentFeedbackIndex, setCurrentFeedbackIndex] = useState(0);
   const [searchPlaceholder, setSearchPlaceholder] = useState("");
   const [selectedDestination, setSelectedDestination] = useState(sriLankanDestinations[3]); // Default to Sigiriya
   const placeholderTexts = ["Plan you tour.....", "Explore destinations.....", "Find experiences.....", "Discover heritage....."];
@@ -43,6 +46,19 @@ export default function Home() {
       .then(data => setFeedbacks(data.feedbacks))
       .catch(err => console.error('Error fetching feedbacks:', err));
   }, []);
+
+  // Auto-rotate feedbacks every 4 seconds
+  useEffect(() => {
+    if (feedbacks.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentFeedbackIndex((prevIndex) => 
+          prevIndex === feedbacks.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 4000);
+
+      return () => clearInterval(interval);
+    }
+  }, [feedbacks]);
 
   React.useEffect(() => {
     const currentText = placeholderTexts[textIndex];
@@ -70,23 +86,53 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!name || !message) {
+      setSubscribeMessage("Please fill in all fields");
+      return;
+    }
+    
     try {
-      const response = await fetch('/api/subscribe', {
+      // Subscribe email
+      const subscribeResponse = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
       });
       
-      const data = await response.json();
-      setSubscribeMessage(data.message);
+      const subscribeData = await subscribeResponse.json();
       
-      if (data.success) {
-        setSubscriberCount(data.count);
+      // Add feedback
+      const feedbackResponse = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          name, 
+          email, 
+          rating: 5, 
+          comment: message 
+        })
+      });
+      
+      const feedbackData = await feedbackResponse.json();
+      
+      if (subscribeData.success && feedbackData.success) {
+        setSubscribeMessage("Thank you! Your message has been received.");
+        setSubscriberCount(subscribeData.count);
         setEmail("");
+        setName("");
+        setMessage("");
+        
+        // Refresh feedbacks
+        const refreshResponse = await fetch('/api/feedbacks');
+        const refreshData = await refreshResponse.json();
+        setFeedbacks(refreshData.feedbacks);
+        
         setTimeout(() => setSubscribeMessage(""), 5000);
+      } else {
+        setSubscribeMessage(subscribeData.message || feedbackData.message);
       }
     } catch (error) {
-      setSubscribeMessage("Error subscribing. Please try again.");
+      setSubscribeMessage("Error submitting. Please try again.");
     }
   };
 
@@ -446,24 +492,40 @@ export default function Home() {
             Join {subscriberCount.toLocaleString()} travelers who've discovered stress-free exploration with Heritage Lanka
           </p>
           
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-6">
-            <div className="flex flex-col sm:flex-row gap-4">
+          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-6">
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your Name"
+                className="px-6 py-4 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm rounded-lg"
+                required
+              />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
+                placeholder="Your Email"
+                className="px-6 py-4 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm rounded-lg"
                 required
               />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold uppercase tracking-wider text-sm transition flex items-center justify-center gap-2"
-              >
-                Subscribe
-                <FaArrowRight className="text-xs" />
-              </button>
             </div>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Tell us about yourself and your travel plans..."
+              rows={4}
+              className="w-full px-6 py-4 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm mb-4 rounded-lg resize-none"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full md:w-auto px-12 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold uppercase tracking-wider text-sm transition flex items-center justify-center gap-2 rounded-lg mx-auto"
+            >
+              Submit
+              <FaArrowRight className="text-xs" />
+            </button>
           </form>
           
           {subscribeMessage && (
@@ -479,47 +541,78 @@ export default function Home() {
       </section>
 
       {/* Customer Feedback Section */}
-      <section className="bg-gray-50 py-20 px-6">
+      <section className="bg-gray-50 py-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-wide">
               What Travelers Say
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
               Real experiences from travelers who've discovered the Heritage Lanka difference
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {feedbacks.map((feedback, idx) => (
-              <div key={idx} className="content-card p-8">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar 
-                      key={i} 
-                      className={i < feedback.rating ? 'text-yellow-500' : 'text-gray-300'} 
-                    />
-                  ))}
-                </div>
-                
-                <div className="relative mb-6">
-                  <FaQuoteLeft className="absolute -top-2 -left-2 text-3xl text-primary-200" />
-                  <p className="text-gray-700 leading-relaxed pl-6 italic">
-                    "{feedback.comment}"
-                  </p>
-                </div>
+          {/* Horizontal Scrolling Testimonials */}
+          <div className="relative mb-12">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-1000 ease-in-out"
+                style={{ 
+                  transform: `translateX(-${currentFeedbackIndex * 100}%)`,
+                }}
+              >
+                {feedbacks.map((feedback, idx) => (
+                  <div 
+                    key={idx} 
+                    className="w-full flex-shrink-0 px-4"
+                  >
+                    <div className="max-w-4xl mx-auto content-card p-12">
+                      <div className="flex items-center justify-center gap-1 mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar 
+                            key={i} 
+                            className={`text-2xl ${i < feedback.rating ? 'text-yellow-500' : 'text-gray-300'}`}
+                          />
+                        ))}
+                      </div>
+                      
+                      <div className="relative mb-8">
+                        <FaQuoteLeft className="absolute -top-4 -left-4 text-5xl text-primary-200" />
+                        <p className="text-gray-700 leading-relaxed text-xl text-center pl-8 pr-8 italic">
+                          "{feedback.comment}"
+                        </p>
+                      </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {feedback.name.charAt(0)}
+                      <div className="flex items-center justify-center gap-4">
+                        <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+                          {feedback.name.charAt(0)}
+                        </div>
+                        <div className="text-left">
+                          <p className="font-semibold text-gray-900 text-lg">{feedback.name}</p>
+                          <p className="text-sm text-gray-600">{new Date(feedback.date).toLocaleDateString()}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{feedback.name}</p>
-                    <p className="text-sm text-gray-600">{new Date(feedback.date).toLocaleDateString()}</p>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {feedbacks.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentFeedbackIndex(idx)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentFeedbackIndex === idx 
+                      ? 'bg-primary-600 w-8' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Subscriber Count Display */}

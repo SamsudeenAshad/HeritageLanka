@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative h-[70vh] min-h-[600px] overflow-hidden">
         {/* Video Background */}
         <video
           autoPlay
@@ -77,7 +77,7 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0"></div>
         
         {/* Content */}
-        <div className="relative z-10 min-h-screen flex items-center px-6 md:px-12 lg:px-20">
+        <div className="relative z-10 h-full flex items-center px-6 md:px-12 lg:px-20">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left Content */}

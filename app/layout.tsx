@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cinzel, Lato } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const cinzel = Cinzel({ 
+  subsets: ["latin"],
+  variable: '--font-cinzel',
+  weight: ['400', '600', '700']
+});
+
+const lato = Lato({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '700'],
+  variable: '--font-lato'
+});
 
 export const metadata: Metadata = {
   title: "HeritageLanka - Your Unified Travel Companion",
@@ -15,21 +25,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${cinzel.variable} ${lato.variable}`}>
+      <body className={lato.className}>
         {/* Desktop Navigation - Top */}
-        <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="flex justify-between items-center h-16">
+            <div className="flex justify-between items-center h-20">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">HL</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-accent-600 rounded-sm flex items-center justify-center shadow-md">
+                  <span className="text-white font-bold text-xl font-serif">HL</span>
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                <span className="text-2xl font-bold font-serif bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
                   HeritageLanka
                 </span>
               </div>
-              <button className="px-6 py-2.5 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium">
+              <button className="px-8 py-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium uppercase tracking-wide text-sm">
                 Get Started
               </button>
             </div>
@@ -37,43 +47,51 @@ export default function RootLayout({
         </nav>
 
         {/* Mobile Navigation - Bottom */}
-        <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-200">
-          <div className="px-4 py-3">
+        <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-gray-200">
+          <div className="px-4 py-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">HL</span>
+                <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-accent-600 rounded-sm flex items-center justify-center shadow-md">
+                  <span className="text-white font-bold text-base font-serif">HL</span>
                 </div>
-                <span className="text-base font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                <span className="text-lg font-bold font-serif bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
                   HeritageLanka
                 </span>
               </div>
-              <button className="px-5 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full hover:shadow-lg transition-all duration-300 text-sm font-medium">
-                Get Started
+              <button className="px-6 py-2.5 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-sm hover:shadow-lg transition-all duration-300 text-sm font-medium uppercase tracking-wide">
+                Start
               </button>
             </div>
           </div>
         </nav>
 
         {/* Add padding to body for fixed navbars */}
-        <div className="pt-16 md:pt-16 pb-20 md:pb-0">
+        <div className="md:pt-20 pb-24 md:pb-0">
           {children}
         </div>
 
-        <footer className="bg-gray-900 text-white py-12 px-6">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">HL</span>
+        <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white py-16 px-6 border-t border-gray-800">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center space-x-3 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-600 to-accent-600 rounded-sm flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-2xl font-serif">HL</span>
+                </div>
+                <span className="text-3xl font-bold font-serif">HeritageLanka</span>
               </div>
-              <span className="text-xl font-bold">HeritageLanka</span>
+              <div className="section-divider mb-6"></div>
+              <p className="text-gray-400 text-lg mb-2 max-w-2xl mx-auto">
+                Your unified travel companion for seamless adventures.
+              </p>
+              <p className="text-gray-500 italic">
+                Plan. Guide. Manage. Experience.
+              </p>
             </div>
-            <p className="text-gray-400 mb-6">
-              Your unified travel companion for seamless adventures.
-            </p>
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} HeritageLanka. All rights reserved.
-            </p>
+            <div className="pt-8 border-t border-gray-800 text-center">
+              <p className="text-gray-500 text-sm">
+                © {new Date().getFullYear()} HeritageLanka. All rights reserved.
+              </p>
+            </div>
           </div>
         </footer>
       </body>

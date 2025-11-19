@@ -41,48 +41,49 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section with Watercolor Background */}
       <section className="hero-bg min-h-screen flex items-center relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20"></div>
         <div className="container mx-auto px-6 py-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-2xl mb-8 fade-in">
+            <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight drop-shadow-2xl mb-8 fade-in tracking-wide">
               Travel Without <br/>
-              <span className="text-primary-200">The Noise</span>
+              <span className="text-accent-200">The Noise</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/95 drop-shadow-lg leading-relaxed mb-12">
+            <div className="section-divider mb-8"></div>
+            <p className="text-xl md:text-2xl text-white/95 drop-shadow-lg leading-relaxed mb-12 font-light">
               One intelligent platform that plans, guides, and manages your entire journey. 
               Say goodbye to scattered apps and hello to seamless exploration.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="px-10 py-4 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 shadow-2xl text-white font-semibold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2">
+              <button className="px-12 py-4 rounded-sm bg-gradient-to-r from-primary-600 to-accent-600 shadow-2xl text-white font-semibold text-base hover:scale-105 transition-transform flex items-center justify-center gap-2 uppercase tracking-wider">
                 Start Your Journey <FaArrowRight />
               </button>
-              <button className="px-10 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/20 transition">
-                Watch Demo
+              <button className="px-12 py-4 rounded-sm glass text-white font-semibold text-base hover:bg-white/30 transition uppercase tracking-wider border border-white/30">
+                Watch Film
               </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center">
+              <div className="p-8 rounded-sm glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center border border-white/20">
                 <div className="flex justify-center items-center mb-4">
-                  <FaCalendarAlt className="text-5xl text-primary-300" />
+                  <FaCalendarAlt className="text-5xl text-accent-300" />
                 </div>
-                <h4 className="font-bold text-xl mb-3">The Planner</h4>
-                <p className="text-sm text-white/90 leading-relaxed">Smart itineraries that adapt to your pace and preferences.</p>
+                <h4 className="font-serif font-bold text-xl mb-3">The Planner</h4>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Smart itineraries that adapt to your pace and preferences.</p>
               </div>
-              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center">
+              <div className="p-8 rounded-sm glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center border border-white/20">
                 <div className="flex justify-center items-center mb-4">
-                  <FaCompass className="text-5xl text-secondary-300" />
+                  <FaCompass className="text-5xl text-primary-300" />
                 </div>
-                <h4 className="font-bold text-xl mb-3">The Guider</h4>
-                <p className="text-sm text-white/90 leading-relaxed">Live, context-aware guidance with trusted local insights.</p>
+                <h4 className="font-serif font-bold text-xl mb-3">The Guider</h4>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Live, context-aware guidance with trusted local insights.</p>
               </div>
-              <div className="p-6 rounded-2xl glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center">
+              <div className="p-8 rounded-sm glass-dark backdrop-blur-md hover:scale-105 transition-transform text-center border border-white/20">
                 <div className="flex justify-center items-center mb-4">
-                  <FaFolderOpen className="text-5xl text-primary-200" />
+                  <FaFolderOpen className="text-5xl text-accent-200" />
                 </div>
-                <h4 className="font-bold text-xl mb-3">The Manager</h4>
-                <p className="text-sm text-white/90 leading-relaxed">Documents, bookings and collaboration — all organized.</p>
+                <h4 className="font-serif font-bold text-xl mb-3">The Manager</h4>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Documents, bookings and collaboration — all organized.</p>
               </div>
             </div>
           </div>
@@ -91,13 +92,14 @@ export default function Home() {
 
       {/* Problem Section with Nature Background */}
       <section className="nature-bg min-h-screen flex items-center relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center text-white mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Travel Shouldn't Feel Like <span className="text-red-400">Chaos</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 tracking-wide">
+              Travel Shouldn't Feel Like <span className="text-red-300">Chaos</span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            <div className="section-divider mb-6"></div>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light">
               Every traveler knows the frustration of scattered information, 
               endless app switching, and the fear of getting scammed.
             </p>
@@ -106,28 +108,28 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                icon: <FaMobileAlt className="text-6xl text-red-400" />,
+                icon: <FaMobileAlt className="text-6xl text-red-300" />,
                 title: "Too Many Apps",
                 description: "Switching between maps, itineraries, notes, budgets, and booking apps creates confusion and kills the joy of travel."
               },
               {
-                icon: <FaExclamationTriangle className="text-6xl text-yellow-400" />,
+                icon: <FaExclamationTriangle className="text-6xl text-yellow-300" />,
                 title: "Constant Stress",
                 description: "Searching for reliable guides, transport, and hotels while worrying about scams and safety drains your energy."
               },
               {
-                icon: <FaClock className="text-6xl text-orange-400" />,
+                icon: <FaClock className="text-6xl text-orange-300" />,
                 title: "Wasted Time",
                 description: "Hours spent organizing, researching, and cross-referencing information instead of actually enjoying your trip."
               }
             ].map((problem, index) => (
               <div
                 key={index}
-                className="glass-dark backdrop-blur-md rounded-2xl p-8 hover:scale-105 transition-all duration-300 text-center"
+                className="glass-dark backdrop-blur-md rounded-sm p-8 hover:scale-105 transition-all duration-300 text-center border border-white/20"
               >
                 <div className="mb-4 flex justify-center items-center">{problem.icon}</div>
-                <h3 className="text-2xl font-bold text-white mb-4">{problem.title}</h3>
-                <p className="text-white/90 leading-relaxed">{problem.description}</p>
+                <h3 className="text-2xl font-serif font-bold text-white mb-4">{problem.title}</h3>
+                <p className="text-white/90 leading-relaxed font-light">{problem.description}</p>
               </div>
             ))}
           </div>
@@ -136,13 +138,14 @@ export default function Home() {
 
       {/* Solution Section with Heritage Background */}
       <section className="heritage-bg min-h-screen flex items-center relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center text-white mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              One Platform. <span className="text-primary-300">Infinite Possibilities.</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 tracking-wide">
+              One Platform. <span className="text-accent-200">Infinite Possibilities.</span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            <div className="section-divider mb-6"></div>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light">
               HeritageLanka unifies your entire travel experience into one intelligent 
               operating system. Plan, navigate, and manage everything effortlessly.
             </p>
@@ -151,14 +154,14 @@ export default function Home() {
           <div className="space-y-16 max-w-6xl mx-auto">
             {/* Feature Cards */}
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="glass-dark backdrop-blur-md rounded-3xl p-8 hover:scale-105 transition-transform">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4">
+              <div className="glass-dark backdrop-blur-md rounded-sm p-10 hover:scale-105 transition-transform border border-white/20">
+                <div className="inline-flex items-center gap-2 px-5 py-2 bg-accent-600/40 rounded-sm text-sm font-semibold mb-4 border border-accent-400/30 uppercase tracking-wider">
                   <FaCalendarAlt /> The Planner
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3 className="text-3xl font-serif font-bold text-white mb-4">
                   Smart Itineraries That Adapt to You
                 </h3>
-                <p className="text-lg text-white/90 mb-6 leading-relaxed">
+                <p className="text-lg text-white/90 mb-6 leading-relaxed font-light">
                   Build intelligent travel plans that understand your preferences, budget, 
                   and time. Get personalized recommendations that make every moment count.
                 </p>
@@ -170,21 +173,21 @@ export default function Home() {
                     "Collaborative planning for groups"
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-white/90">
-                      <FaCheckCircle className="text-primary-400 mr-3 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <FaCheckCircle className="text-accent-300 mr-3 flex-shrink-0" />
+                      <span className="font-light">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="glass-dark backdrop-blur-md rounded-3xl p-8 hover:scale-105 transition-transform">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-500/30 rounded-full text-sm font-semibold mb-4">
+              <div className="glass-dark backdrop-blur-md rounded-sm p-10 hover:scale-105 transition-transform border border-white/20">
+                <div className="inline-flex items-center gap-2 px-5 py-2 bg-primary-600/40 rounded-sm text-sm font-semibold mb-4 border border-primary-400/30 uppercase tracking-wider">
                   <FaCompass /> The Guider
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3 className="text-3xl font-serif font-bold text-white mb-4">
                   Your Real-Time Travel Companion
                 </h3>
-                <p className="text-lg text-white/90 mb-6 leading-relaxed">
+                <p className="text-lg text-white/90 mb-6 leading-relaxed font-light">
                   Navigate with confidence using context-aware guidance that knows where you 
                   are and what you need, exactly when you need it.
                 </p>
@@ -196,22 +199,22 @@ export default function Home() {
                     { text: "Audio guides for attractions", icon: <MdVolumeUp /> }
                   ].map((feature, index) => (
                     <li key={index} className="flex items-center text-white/90">
-                      <span className="text-secondary-400 mr-3 text-lg flex-shrink-0">{feature.icon}</span>
-                      <span>{feature.text}</span>
+                      <span className="text-primary-300 mr-3 text-lg flex-shrink-0">{feature.icon}</span>
+                      <span className="font-light">{feature.text}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            <div className="glass-dark backdrop-blur-md rounded-3xl p-8 max-w-3xl mx-auto hover:scale-105 transition-transform">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/30 rounded-full text-sm font-semibold mb-4">
+            <div className="glass-dark backdrop-blur-md rounded-sm p-10 max-w-3xl mx-auto hover:scale-105 transition-transform border border-white/20">
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-accent-600/40 rounded-sm text-sm font-semibold mb-4 border border-accent-400/30 uppercase tracking-wider">
                 <FaFolderOpen /> The Manager
               </div>
-              <h3 className="text-3xl font-bold text-white mb-4">
+              <h3 className="text-3xl font-serif font-bold text-white mb-4">
                 Effortless Trip Organization
               </h3>
-              <p className="text-lg text-white/90 mb-6 leading-relaxed">
+              <p className="text-lg text-white/90 mb-6 leading-relaxed font-light">
                 Keep all your documents, bookings, and logistics in one secure place. 
                 Share with travel companions and collaborate seamlessly.
               </p>
@@ -223,8 +226,8 @@ export default function Home() {
                   { text: "Team collaboration tools", icon: <HiUserGroup /> }
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center text-white/90">
-                    <span className="text-primary-400 mr-3 text-xl flex-shrink-0">{feature.icon}</span>
-                    <span>{feature.text}</span>
+                    <span className="text-accent-300 mr-3 text-xl flex-shrink-0">{feature.icon}</span>
+                    <span className="font-light">{feature.text}</span>
                   </div>
                 ))}
               </div>

@@ -64,31 +64,31 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
           {/* Fallback to image if video doesn't load */}
         </video>
         
         {/* Fallback Background Image */}
-        <div className="hero-bg absolute inset-0 opacity-0"></div>
+        <div className="hero-bg absolute inset-0 z-0"></div>
         
         {/* Overlay */}
-        <div className="hero-overlay absolute inset-0"></div>
+        <div className="hero-overlay absolute inset-0 z-5"></div>
         
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center px-6 md:px-12 lg:px-20">
+        <div className="relative z-20 h-full flex items-center px-6 md:px-12 lg:px-20">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left Content */}
               <div className="text-white max-w-3xl">
-                <p className="text-orange-500 font-serif italic text-xl md:text-2xl mb-6">
+                <p className="text-orange-500 font-serif italic text-xl md:text-2xl mb-6 drop-shadow-lg">
                   Welcome to Heritage Lanka
                 </p>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 drop-shadow-2xl">
                   Discover Your Favorite Place with Us
                 </h1>
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10 drop-shadow-lg">
                   Travel to the any corner of the world, without going around in circles
                 </p>
                 
@@ -110,7 +110,7 @@ export default function Home() {
         
         {/* Scroll Down Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-          <div className="text-white flex flex-col items-center cursor-pointer animate-bounce">
+          <div className="text-white flex flex-col items-center cursor-pointer animate-bounce drop-shadow-lg">
             <span className="text-xs uppercase tracking-widest mb-2">Scroll Down</span>
             <FaChevronDown className="text-xl" />
           </div>

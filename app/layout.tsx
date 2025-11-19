@@ -122,7 +122,7 @@ export default function RootLayout({
         </nav>
 
         {/* Add padding to body for fixed navbars */}
-        <div className="md:pt-24 pb-24 md:pb-0">
+        <div className="pb-24 md:pb-0">
           {children}
         </div>
 

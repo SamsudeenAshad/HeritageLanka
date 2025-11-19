@@ -102,8 +102,8 @@ export default function Home() {
       {/* Interactive Map Section - Things to Do */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-[45%_55%] gap-8 items-start">
-            {/* Left Side - Text and Map */}
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
+            {/* Left Column - Text */}
             <div>
               <h2 className="text-5xl md:text-6xl font-bold mb-2 leading-none">
                 THINGS<br/>
@@ -111,15 +111,17 @@ export default function Home() {
               </h2>
               <p className="text-2xl font-sans font-normal mb-8">IN SRI LANKA</p>
               
-              <p className="text-gray-700 mb-12 leading-relaxed text-sm">
+              <p className="text-gray-700 leading-relaxed text-sm">
                 We want to share Sri Lanka's extraordinarily diverse and authentic story with the rest of the world. 
                 We want to help you discover the many thousands of different ways in which you can fall in love with our home 
                 &amp; plan the perfect trip: local experts, local perspective and all the best tips on where to eat, what to do, 
                 who to meet, how to get there and where to make your next favourite memory.
               </p>
+            </div>
 
-              {/* Interactive Map */}
-              <div className="relative bg-gradient-to-br from-blue-100 via-blue-50 to-green-50 rounded-lg overflow-hidden shadow-lg" style={{height: '500px'}}>
+            {/* Middle Column - Interactive Map */}
+            <div>
+              <div className="relative bg-gradient-to-br from-blue-100 via-blue-50 to-green-50 rounded-lg overflow-hidden shadow-lg" style={{height: '600px'}}>
                 {/* Map Background with actual island shape */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg className="w-full h-full" viewBox="0 0 500 700" preserveAspectRatio="xMidYMid meet">
@@ -166,7 +168,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Side - Destination Details */}
+            {/* Right Column - Destination Details */}
             <div className="lg:sticky lg:top-32">
               <div className="bg-white rounded-lg overflow-hidden shadow-xl">
                 {/* Destination Image */}
@@ -178,17 +180,17 @@ export default function Home() {
                 </div>
 
                 {/* Destination Info */}
-                <div className="p-8 relative -mt-20 z-10">
+                <div className="p-6 relative -mt-20 z-10">
                   <div className="bg-white rounded-lg shadow-lg p-6">
-                    <h3 className="text-3xl font-bold uppercase tracking-wide mb-2 flex items-center gap-3">
-                      <FaMapMarkerAlt className="text-primary-600 text-2xl" />
+                    <h3 className="text-2xl font-bold uppercase tracking-wide mb-2 flex items-center gap-3">
+                      <FaMapMarkerAlt className="text-primary-600 text-xl" />
                       {selectedDestination.name}
                     </h3>
                     <p className="text-gray-500 uppercase text-xs tracking-widest mb-4">
                       HIKING TRAILS THAT ARE IDEAL FOR FRIENDS
                     </p>
                     
-                    <p className="text-gray-700 leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6 text-sm">
                       {selectedDestination.description}
                     </p>
 

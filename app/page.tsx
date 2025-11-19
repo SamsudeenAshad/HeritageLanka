@@ -273,13 +273,14 @@ export default function Home() {
 
       {/* CTA Section with Sunset Background */}
       <section className="sunset-bg min-h-[70vh] flex items-center relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/30"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 tracking-wide">
               Ready to Transform Your Travel Experience?
             </h2>
-            <p className="text-xl md:text-2xl mb-12 text-white/95">
+            <div className="section-divider mb-8"></div>
+            <p className="text-xl md:text-2xl mb-12 text-white/95 font-light">
               Join thousands of travelers who've discovered the joy of stress-free exploration.
             </p>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -289,17 +290,17 @@ export default function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/50 font-medium"
+                  className="flex-1 px-6 py-4 rounded-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent-500 font-light"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-sm hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 uppercase tracking-wider"
                 >
                   Get Early Access <FaArrowRight />
                 </button>
               </div>
-              <p className="text-sm mt-4 text-white/75">
+              <p className="text-sm mt-4 text-white/75 font-light italic">
                 No credit card required. Start your free trial today.
               </p>
             </form>
@@ -309,10 +310,10 @@ export default function Home() {
                 <FaStar key={i} className="w-8 h-8 text-yellow-400" />
               ))}
             </div>
-            <p className="mt-4 text-lg text-white/95 italic">
+            <p className="mt-4 text-lg text-white/95 italic font-light">
               "Finally, a travel app that actually understands what travelers need. This is the future of travel."
             </p>
-            <p className="mt-2 text-white/80">— Sarah M., Adventure Traveler</p>
+            <p className="mt-2 text-white/80 font-light">— Sarah M., Adventure Traveler</p>
           </div>
         </div>
       </section>

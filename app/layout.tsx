@@ -43,33 +43,33 @@ export default function RootLayout({
               </div>
               
               {/* Navigation Menu */}
-              <div className="flex items-center gap-8">
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaHome className="text-base" />
+              <div className="flex items-center gap-6">
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaHome className="text-lg" />
                   <span>Home</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaInfoCircle className="text-base" />
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaInfoCircle className="text-lg" />
                   <span>About Us</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaMapMarkedAlt className="text-base" />
-                  <span>Planning a Trip</span>
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaMapMarkedAlt className="text-lg" />
+                  <span>Planning</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaCompass className="text-base" />
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaCompass className="text-lg" />
                   <span>Destinations</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaStar className="text-base" />
-                  <span>Key Experiences</span>
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaStar className="text-lg" />
+                  <span>Experiences</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaBook className="text-base" />
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaBook className="text-lg" />
                   <span>Journal</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
-                  <FaPhotoVideo className="text-base" />
+                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                  <FaPhotoVideo className="text-lg" />
                   <span>Media</span>
                 </a>
               </div>

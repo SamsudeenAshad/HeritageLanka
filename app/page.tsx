@@ -100,18 +100,18 @@ export default function Home() {
       </section>
 
       {/* Interactive Map Section - Things to Do */}
-      <section className="bg-gray-50 py-20 px-6">
+      <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-[45%_55%] gap-8 items-start">
             {/* Left Side - Text and Map */}
             <div>
-              <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold mb-2 leading-none">
                 THINGS<br/>
-                TO DO<br/>
-                <span className="text-3xl font-sans font-normal">IN SRI LANKA</span>
+                TO DO
               </h2>
+              <p className="text-2xl font-sans font-normal mb-8">IN SRI LANKA</p>
               
-              <p className="text-gray-700 mb-8 leading-relaxed">
+              <p className="text-gray-700 mb-12 leading-relaxed text-sm">
                 We want to share Sri Lanka's extraordinarily diverse and authentic story with the rest of the world. 
                 We want to help you discover the many thousands of different ways in which you can fall in love with our home 
                 &amp; plan the perfect trip: local experts, local perspective and all the best tips on where to eat, what to do, 
@@ -119,23 +119,22 @@ export default function Home() {
               </p>
 
               {/* Interactive Map */}
-              <div className="relative bg-blue-100 rounded-lg overflow-hidden" style={{height: '500px'}}>
-                {/* Map Background - You can replace this with an actual Sri Lanka map image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-green-100 opacity-60"></div>
-                
-                {/* SVG or Image of Sri Lanka Map */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet">
-                  {/* Simplified Sri Lanka outline */}
-                  <path
-                    d="M 200 50 Q 250 80 280 140 Q 300 200 290 280 Q 285 340 260 400 Q 240 450 200 520 Q 160 450 140 400 Q 115 340 110 280 Q 100 200 120 140 Q 150 80 200 50 Z"
-                    fill="#90EE90"
-                    fillOpacity="0.5"
-                    stroke="#2d7659"
-                    strokeWidth="2"
-                  />
-                </svg>
+              <div className="relative bg-gradient-to-br from-blue-100 via-blue-50 to-green-50 rounded-lg overflow-hidden shadow-lg" style={{height: '500px'}}>
+                {/* Map Background with actual island shape */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg className="w-full h-full" viewBox="0 0 500 700" preserveAspectRatio="xMidYMid meet">
+                    {/* Sri Lanka outline - more accurate shape */}
+                    <path
+                      d="M 250 80 Q 290 90 320 130 Q 340 160 350 200 Q 360 250 355 300 Q 350 350 340 400 Q 330 450 310 500 Q 290 540 260 580 Q 240 600 230 610 Q 210 600 190 580 Q 160 540 140 500 Q 120 450 110 400 Q 100 350 100 300 Q 100 250 110 200 Q 120 160 140 130 Q 170 90 210 80 Q 230 75 250 80 Z"
+                      fill="#d4f1d4"
+                      stroke="#4ade80"
+                      strokeWidth="2"
+                      opacity="0.6"
+                    />
+                  </svg>
+                </div>
 
-                {/* Location Markers */}
+                {/* Location Markers - Positioned more accurately */}
                 {sriLankanDestinations.map((dest) => (
                   <button
                     key={dest.id}
@@ -144,17 +143,20 @@ export default function Home() {
                       selectedDestination.id === dest.id ? 'scale-125 z-20' : 'z-10'
                     }`}
                     style={{ top: dest.position.top, left: dest.position.left }}
+                    title={dest.name}
                   >
-                    <div className={`relative ${selectedDestination.id === dest.id ? 'animate-bounce' : ''}`}>
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-white shadow-lg ${
+                    <div className={`relative ${selectedDestination.id === dest.id ? 'animate-pulse' : ''}`}>
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-xl border-2 border-white ${
                         selectedDestination.id === dest.id 
                           ? 'bg-red-500 ring-4 ring-red-300' 
                           : 'bg-blue-900 hover:bg-blue-700'
                       }`}>
                         {dest.number}
                       </div>
-                      <div className={`absolute -bottom-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-xs font-bold ${
-                        selectedDestination.id === dest.id ? 'text-red-600' : 'text-gray-800'
+                      <div className={`absolute -bottom-7 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-xs font-bold px-2 py-1 rounded ${
+                        selectedDestination.id === dest.id 
+                          ? 'bg-red-500 text-white' 
+                          : 'bg-white text-gray-800 border border-gray-300'
                       }`}>
                         {dest.name}
                       </div>
@@ -166,45 +168,36 @@ export default function Home() {
 
             {/* Right Side - Destination Details */}
             <div className="lg:sticky lg:top-32">
-              <div className="content-card overflow-hidden">
+              <div className="bg-white rounded-lg overflow-hidden shadow-xl">
                 {/* Destination Image */}
                 <div 
-                  className="h-80 bg-cover bg-center relative"
+                  className="h-96 bg-cover bg-center relative"
                   style={{backgroundImage: `url(${selectedDestination.image})`}}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <div className="flex items-center gap-3 mb-2">
-                      <FaMapMarkerAlt className="text-orange-500 text-2xl" />
-                      <h3 className="text-3xl font-serif font-bold uppercase tracking-wide">
-                        {selectedDestination.name}
-                      </h3>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 </div>
 
                 {/* Destination Info */}
-                <div className="p-8">
-                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                    {selectedDestination.description}
-                  </p>
+                <div className="p-8 relative -mt-20 z-10">
+                  <div className="bg-white rounded-lg shadow-lg p-6">
+                    <h3 className="text-3xl font-bold uppercase tracking-wide mb-2 flex items-center gap-3">
+                      <FaMapMarkerAlt className="text-primary-600 text-2xl" />
+                      {selectedDestination.name}
+                    </h3>
+                    <p className="text-gray-500 uppercase text-xs tracking-widest mb-4">
+                      HIKING TRAILS THAT ARE IDEAL FOR FRIENDS
+                    </p>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      {selectedDestination.description}
+                    </p>
 
-                  <h4 className="text-xl font-serif font-bold mb-4 uppercase tracking-wide">
-                    Things to Experience
-                  </h4>
-                  <ul className="space-y-3 mb-6">
-                    {selectedDestination.activities.map((activity, index) => (
-                      <li key={index} className="flex items-center gap-3 text-gray-700">
-                        <FaArrowRight className="text-primary-600 text-sm flex-shrink-0" />
-                        <span>{activity}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button className="w-full py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold uppercase tracking-wider text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-3">
-                    Explore {selectedDestination.name}
-                    <FaArrowRight className="text-sm" />
-                  </button>
+                    <button className="flex items-center gap-2 text-gray-800 hover:text-primary-600 transition group">
+                      <div className="w-10 h-10 border-2 border-gray-800 rounded-full flex items-center justify-center group-hover:border-primary-600 transition">
+                        <FaArrowRight className="text-sm" />
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

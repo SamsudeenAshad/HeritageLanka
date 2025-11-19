@@ -72,6 +72,27 @@ export default function RootLayout({
                   <FaPhotoVideo className="text-base" />
                   <span>Media</span>
                 </a>
+              </div>
+
+              {/* Search Bar */}
+              <div className="flex items-center">
+                <div className="relative">
+                  <input 
+                    type="text" 
+                    placeholder="Search..." 
+                    className="w-64 px-6 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition"
+                  />
+                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary-600 transition">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
         {/* Mobile Navigation - Bottom */}
         <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-gray-200">
           <div className="px-2 py-3">
@@ -96,27 +117,6 @@ export default function RootLayout({
                 <FaSearch className="text-xl" />
                 <span className="text-xs">Search</span>
               </a>
-            </div>
-          </div>
-        </nav>div>
-          </div>
-        </nav>
-
-        {/* Mobile Navigation - Bottom */}
-        <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-gray-200">
-          <div className="px-4 py-4">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-accent-600 rounded-sm flex items-center justify-center shadow-md">
-                  <span className="text-white font-bold text-base font-serif">HL</span>
-                </div>
-                <span className="text-lg font-bold font-serif bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent">
-                  HeritageLanka
-                </span>
-              </div>
-              <button className="px-6 py-2.5 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-sm hover:shadow-lg transition-all duration-300 text-sm font-medium uppercase tracking-wide">
-                Menu
-              </button>
             </div>
           </div>
         </nav>

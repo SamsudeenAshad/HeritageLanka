@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Cinzel, Lato } from "next/font/google";
-import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass, FaCalendarAlt } from 'react-icons/fa';
 import "./globals.css";
 
 const cinzel = Cinzel({ 
@@ -53,6 +53,10 @@ export default function RootLayout({
                   <FaInfoCircle className="text-lg" />
                   <span>About</span>
                 </Link>
+                <Link href="/plan" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                  <FaCalendarAlt className="text-lg" />
+                  <span>Plan</span>
+                </Link>
                 <Link href="/places" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaMapMarkedAlt className="text-lg" />
                   <span>Places</span>
@@ -94,6 +98,10 @@ export default function RootLayout({
                 <FaInfoCircle className="text-xl" />
                 <span className="text-xs">About</span>
               </Link>
+              <Link href="/plan" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaCalendarAlt className="text-xl" />
+                <span className="text-xs">Plan</span>
+              </Link>
               <Link href="/places" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaMapMarkedAlt className="text-xl" />
                 <span className="text-xs">Places</span>
@@ -119,6 +127,7 @@ export default function RootLayout({
             <div className="flex flex-wrap justify-center gap-6 mb-12 text-white text-sm uppercase tracking-widest">
               <Link href="/" className="hover:text-white/80 transition">Home</Link>
               <Link href="/about" className="hover:text-white/80 transition">About</Link>
+              <Link href="/plan" className="hover:text-white/80 transition">Plan</Link>
               <Link href="/places" className="hover:text-white/80 transition">Places</Link>
               <Link href="/explore" className="hover:text-white/80 transition">Explore</Link>
             </div>

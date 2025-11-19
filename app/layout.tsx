@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Cinzel, Lato } from "next/font/google";
 import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass, FaStar, FaBook, FaPhotoVideo, FaSearch } from 'react-icons/fa';
 import "./globals.css";
@@ -44,34 +45,34 @@ export default function RootLayout({
               
               {/* Navigation Menu */}
               <div className="flex items-center gap-6">
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                <Link href="/" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaHome className="text-lg" />
                   <span>Home</span>
-                </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                </Link>
+                <Link href="/about" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaInfoCircle className="text-lg" />
                   <span>About Us</span>
-                </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                </Link>
+                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaMapMarkedAlt className="text-lg" />
                   <span>Planning</span>
-                </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                </Link>
+                <Link href="/places" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaCompass className="text-lg" />
                   <span>Destinations</span>
-                </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                </Link>
+                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaStar className="text-lg" />
                   <span>Experiences</span>
-                </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                </Link>
+                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaBook className="text-lg" />
                   <span>Journal</span>
-                </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
+                </Link>
+                <Link href="/explore" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaPhotoVideo className="text-lg" />
                   <span>Media</span>
-                </a>
+                </Link>
               </div>
 
               {/* Search Bar */}
@@ -97,26 +98,26 @@ export default function RootLayout({
         <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-gray-200">
           <div className="px-2 py-3">
             <div className="flex justify-around items-center">
-              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+              <Link href="/" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaHome className="text-xl" />
                 <span className="text-xs">Home</span>
-              </a>
-              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+              </Link>
+              <Link href="/explore" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaMapMarkedAlt className="text-xl" />
                 <span className="text-xs">Plan</span>
-              </a>
-              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+              </Link>
+              <Link href="/places" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaCompass className="text-xl" />
                 <span className="text-xs">Places</span>
-              </a>
-              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+              </Link>
+              <Link href="/explore" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaStar className="text-xl" />
                 <span className="text-xs">Explore</span>
-              </a>
-              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+              </Link>
+              <Link href="/about" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaSearch className="text-xl" />
-                <span className="text-xs">Search</span>
-              </a>
+                <span className="text-xs">About</span>
+              </Link>
             </div>
           </div>
         </nav>
@@ -132,11 +133,11 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto relative z-10">
             {/* Top Navigation Links */}
             <div className="flex flex-wrap justify-center gap-6 mb-12 text-white text-sm uppercase tracking-widest">
-              <a href="#" className="hover:text-white/80 transition">Home</a>
-              <a href="#" className="hover:text-white/80 transition">Destinations</a>
-              <a href="#" className="hover:text-white/80 transition">Planning a Trip</a>
-              <a href="#" className="hover:text-white/80 transition">Key Experiences</a>
-              <a href="#" className="hover:text-white/80 transition">Contact Us</a>
+              <Link href="/" className="hover:text-white/80 transition">Home</Link>
+              <Link href="/places" className="hover:text-white/80 transition">Destinations</Link>
+              <Link href="/explore" className="hover:text-white/80 transition">Planning a Trip</Link>
+              <Link href="/explore" className="hover:text-white/80 transition">Key Experiences</Link>
+              <Link href="/about" className="hover:text-white/80 transition">Contact Us</Link>
             </div>
 
             {/* Main Footer Content */}

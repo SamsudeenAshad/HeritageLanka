@@ -145,45 +145,37 @@ export default function RootLayout({
               <div className="text-center md:text-left">
                 <h3 className="text-sm uppercase tracking-widest mb-6 font-semibold">Connect With Us</h3>
                 <div className="flex justify-center md:justify-start gap-4">
-                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition">
+                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition" aria-label="Facebook">
                     <span className="text-lg">f</span>
                   </a>
-                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition">
+                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition" aria-label="LinkedIn">
                     <span className="text-lg">in</span>
                   </a>
-                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition">
-                    <span className="text-lg">t</span>
+                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition" aria-label="Twitter">
+                    <span className="text-lg">𝕏</span>
                   </a>
-                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition">
-                    <span className="text-lg">p</span>
-                  </a>
-                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition">
-                    <span className="text-lg">yt</span>
+                  <a href="#" className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition" aria-label="Instagram">
+                    <span className="text-lg">📷</span>
                   </a>
                 </div>
               </div>
 
-              {/* An Initiative By */}
+              {/* About Heritage Lanka */}
               <div className="text-center">
-                <h3 className="text-sm uppercase tracking-widest mb-6 font-semibold">An Initiative By</h3>
-                <div className="bg-white/10 backdrop-blur-sm p-4 inline-block">
-                  <p className="font-serif text-lg font-bold">SRI LANKA<br/>TOURISM<br/>ALLIANCE</p>
+                <h3 className="text-sm uppercase tracking-widest mb-6 font-semibold">About Heritage Lanka</h3>
+                <div className="bg-white/10 backdrop-blur-sm p-6 inline-block rounded-lg">
+                  <p className="font-serif text-xl font-bold mb-2">HERITAGE<br/>LANKA</p>
+                  <p className="text-xs tracking-wide">Your Unified Travel Platform<br/>for Sri Lanka</p>
                 </div>
               </div>
 
-              {/* Partners */}
+              {/* Development Partner */}
               <div className="text-center md:text-right">
-                <div className="mb-8">
-                  <h3 className="text-sm uppercase tracking-widest mb-4 font-semibold">Web and Digital Partner</h3>
-                  <div className="inline-block">
-                    <p className="font-serif text-2xl font-bold">ANTYRA</p>
-                    <p className="text-xs tracking-widest">SOLUTIONS</p>
-                  </div>
-                </div>
                 <div>
-                  <h3 className="text-sm uppercase tracking-widest mb-4 font-semibold">Branding Partner</h3>
+                  <h3 className="text-sm uppercase tracking-widest mb-4 font-semibold">Developed By</h3>
                   <div className="inline-block">
-                    <p className="font-serif text-2xl font-bold italic">audacity</p>
+                    <p className="font-serif text-3xl font-bold tracking-wide">TetraNeurons</p>
+                    <p className="text-xs tracking-widest mt-1 text-white/80">Innovation in Travel Technology</p>
                   </div>
                 </div>
               </div>
@@ -191,8 +183,8 @@ export default function RootLayout({
 
             {/* Bottom Bar */}
             <div className="border-t border-white/30 pt-8 text-center text-white/80 text-sm">
-              <p className="mb-2">POWERED BY <span className="font-semibold">TALES OF CEYLON</span></p>
-              <p>CONCEPT AND DESIGN BY <span className="font-semibold text-primary-400">ANTYRA SOLUTIONS</span></p>
+              <p className="mb-2">© 2024 Heritage Lanka. All rights reserved.</p>
+              <p>Proudly Developed by <span className="font-semibold text-white">TetraNeurons Team</span></p>
             </div>
           </div>
         </footer>

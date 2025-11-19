@@ -29,13 +29,13 @@ export default function RootLayout({
     <html lang="en" className={`${cinzel.variable} ${lato.variable}`}>
       <body className={lato.className}>
         {/* Desktop Navigation - Top */}
-        <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="flex justify-between items-center h-24">
               {/* Logo */}
               <div className="flex items-center">
                 <div className="text-white">
-                  <svg width="160" height="60" viewBox="0 0 160 60" className="fill-current text-gray-800">
+                  <svg width="160" height="60" viewBox="0 0 160 60" className="fill-current text-white">
                     <text x="10" y="35" fontFamily="serif" fontSize="24" fontWeight="bold" fill="currentColor">HERITAGE</text>
                     <text x="10" y="55" fontFamily="sans-serif" fontSize="10" letterSpacing="2" fill="currentColor">LANKA</text>
                   </svg>
@@ -44,31 +44,31 @@ export default function RootLayout({
               
               {/* Navigation Menu */}
               <div className="flex items-center gap-6">
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaHome className="text-lg" />
                   <span>Home</span>
                 </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaInfoCircle className="text-lg" />
                   <span>About Us</span>
                 </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaMapMarkedAlt className="text-lg" />
                   <span>Planning</span>
                 </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaCompass className="text-lg" />
                   <span>Destinations</span>
                 </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaStar className="text-lg" />
                   <span>Experiences</span>
                 </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaBook className="text-lg" />
                   <span>Journal</span>
                 </a>
-                <a href="#" className="flex flex-col items-center gap-1 text-gray-700 hover:text-primary-600 transition text-xs uppercase tracking-wider font-medium">
+                <a href="#" className="flex flex-col items-center gap-1 text-white hover:text-orange-400 transition text-xs uppercase tracking-wider font-medium">
                   <FaPhotoVideo className="text-lg" />
                   <span>Media</span>
                 </a>
@@ -80,9 +80,9 @@ export default function RootLayout({
                   <input 
                     type="text" 
                     placeholder="Search..." 
-                    className="w-64 px-6 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition"
+                    className="w-64 px-6 py-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white/30 transition"
                   />
-                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary-600 transition">
+                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-white hover:text-orange-400 transition">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>

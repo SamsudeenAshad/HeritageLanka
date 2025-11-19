@@ -96,6 +96,7 @@ export default function Home() {
             <span className="text-xs uppercase tracking-widest mb-2">Scroll Down</span>
             <FaChevronDown className="text-xl" />
           </div>
+        </div>
       </section>
 
       {/* Interactive Map Section - Things to Do */}
@@ -212,7 +213,6 @@ export default function Home() {
       </section>
 
       {/* Award Section */}
-      <section className="bg-white py-20 px-6">
       <section className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">

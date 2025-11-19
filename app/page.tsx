@@ -1,0 +1,257 @@
+"use client";
+
+import React, { useState } from 'react';
+import { FaArrowRight, FaChevronDown, FaPlay } from 'react-icons/fa';
+
+export default function Home() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Email submitted:", email);
+  };
+
+  return (
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="hero-bg relative">
+        <div className="hero-overlay absolute inset-0"></div>
+        <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
+          <div className="text-center text-white mb-12">
+            <div className="hero-title-box mx-auto">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-widest leading-tight">
+                Travel Without<br/>
+                The Noise
+              </h1>
+              <p className="text-sm md:text-base uppercase tracking-[0.3em] mt-6 font-light">
+                Plan Your Next Trip
+              </p>
+            </div>
+          </div>
+          
+          <button className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
+            <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/10 transition">
+              <FaPlay className="text-sm ml-1" />
+            </div>
+            <span className="text-sm uppercase tracking-widest">Watch The Film</span>
+          </button>
+          
+          <div className="explore-arrow">
+            <div className="text-white flex flex-col items-center cursor-pointer">
+              <span className="text-xs uppercase tracking-widest mb-2">Explore</span>
+              <FaChevronDown className="text-2xl" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Award Section */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-2 uppercase tracking-wide leading-tight">
+                HERITAGELANKA IS BACK!
+              </h2>
+              <h2 className="text-5xl md:text-7xl font-serif font-bold uppercase tracking-wide leading-none">
+                LOVE<br/>
+                HERITAGE<br/>
+                LANKA
+              </h2>
+            </div>
+            <div>
+              <h3 className="text-2xl font-serif font-bold mb-4">
+                Unified Travel Platform
+              </h3>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                The problem is that travel information is scattered across many apps, documents, and websites.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Our product solves this by unifying the entire travel experience into one intelligent operating system that plans, guides, and manages trips effortlessly.
+              </p>
+              <a href="#features" className="read-more">
+                ABOUT US
+                <FaArrowRight className="text-xs" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three Card Section */}
+      <section className="bg-gray-50 py-16 px-6" id="features">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="content-card p-0 overflow-hidden">
+              <div className="h-64 bg-cover bg-center" style={{backgroundImage: 'url(/bg2.jpg)'}}></div>
+              <div className="p-8">
+                <h3 className="text-xl font-serif font-bold uppercase mb-4 tracking-wide">
+                  The Planner
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                  Smart itineraries that adapt to your pace and preferences with AI-powered generation.
+                </p>
+                <a href="#" className="read-more text-sm">
+                  READ MORE
+                  <FaArrowRight className="text-xs" />
+                </a>
+              </div>
+            </div>
+
+            <div className="content-card p-0 overflow-hidden">
+              <div className="h-64 bg-cover bg-center" style={{backgroundImage: 'url(/bg3.jpg)'}}></div>
+              <div className="p-8">
+                <h3 className="text-xl font-serif font-bold uppercase mb-4 tracking-wide">
+                  The Guider
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                  Live, context-aware guidance with trusted local insights and real-time navigation.
+                </p>
+                <a href="#" className="read-more text-sm">
+                  READ MORE
+                  <FaArrowRight className="text-xs" />
+                </a>
+              </div>
+            </div>
+
+            <div className="content-card p-0 overflow-hidden">
+              <div className="h-64 bg-cover bg-center" style={{backgroundImage: 'url(/bg4.jpg)'}}></div>
+              <div className="p-8">
+                <h3 className="text-xl font-serif font-bold uppercase mb-4 tracking-wide">
+                  The Manager
+                </h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                  Documents, bookings and collaboration all organized in one secure place.
+                </p>
+                <a href="#" className="read-more text-sm">
+                  READ MORE
+                  <FaArrowRight className="text-xs" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid Section */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-wide leading-tight">
+                ONE PLATFORM<br/>
+                ALL FEATURES
+              </h2>
+              <p className="text-lg font-serif mb-6 tracking-wide">UNIFIED TRAVEL EXPERIENCE</p>
+              <p className="text-gray-700 leading-relaxed mb-8">
+                HeritageLanka is a unified travel platform that plans, guides, and manages trips while connecting travelers to trusted local services.
+              </p>
+              <a href="#" className="read-more">
+                FIND OUT MORE
+                <FaArrowRight className="text-xs" />
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="h-64 bg-cover bg-center content-card overflow-hidden" style={{backgroundImage: 'url(/bg5.jpg)'}}>
+                <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
+                  <div className="text-white">
+                    <p className="text-xs uppercase tracking-widest mb-1">Smart</p>
+                    <h4 className="text-2xl font-serif font-bold">ITINERARIES</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="h-64 bg-cover bg-center content-card overflow-hidden" style={{backgroundImage: 'url(/bg6.jpg)'}}>
+                <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
+                  <div className="text-white">
+                    <p className="text-xs uppercase tracking-widest mb-1">Real-Time</p>
+                    <h4 className="text-2xl font-serif font-bold">GUIDANCE</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="h-64 bg-cover bg-center content-card overflow-hidden" style={{backgroundImage: 'url(/hero-bg.jpg)'}}>
+                <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
+                  <div className="text-white">
+                    <p className="text-xs uppercase tracking-widest mb-1">Booking</p>
+                    <h4 className="text-2xl font-serif font-bold">MANAGER</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="h-64 bg-cover bg-center content-card overflow-hidden" style={{backgroundImage: 'url(/bg2.jpg)'}}>
+                <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
+                  <div className="text-white">
+                    <p className="text-xs uppercase tracking-widest mb-1">Trusted</p>
+                    <h4 className="text-2xl font-serif font-bold">LOCALS</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="nature-bg py-20 px-6 relative">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 uppercase tracking-wide">
+              CONNECT WITH<br/>
+              TRUSTED SERVICES
+            </h2>
+            <p className="text-lg font-serif text-white/90 tracking-wide">LOCAL GUIDES & PROVIDERS</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Expert Guides", desc: "Verified local experts" },
+              { title: "Transport", desc: "Reliable drivers & vehicles" },
+              { title: "Accommodation", desc: "Trusted hotels & homestays" },
+              { title: "Activities", desc: "Authentic experiences" }
+            ].map((service, index) => (
+              <div key={index} className="content-card p-6 text-center bg-white/95 hover:bg-white transition">
+                <h3 className="text-lg font-serif font-bold uppercase mb-2 tracking-wide">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="sunset-bg py-20 px-6 relative">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 uppercase tracking-wide">
+            SIGN UP FOR UPDATES
+          </h2>
+          <p className="text-white/90 text-lg mb-12 font-light">
+            Join thousands of travelers discovering seamless exploration
+          </p>
+          
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 px-6 py-4 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
+                required
+              />
+              <button
+                type="submit"
+                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold uppercase tracking-wider text-sm transition flex items-center justify-center gap-2"
+              >
+                Subscribe
+                <FaArrowRight className="text-xs" />
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  );
+}

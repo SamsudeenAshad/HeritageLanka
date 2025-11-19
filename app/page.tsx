@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { FaArrowRight, FaChevronDown, FaPlay, FaMapMarkerAlt } from 'react-icons/fa';
 
 // Sri Lankan destinations data
@@ -146,10 +147,10 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 Heritage Lanka unifies your entire travel experience into one intelligent platform that plans your trip, guides you in real time, and manages all logistics effortlessly—eliminating the chaos of juggling multiple apps.
               </p>
-              <a href="#features" className="read-more">
+              <Link href="/about" className="read-more">
                 DISCOVER HOW IT WORKS
                 <FaArrowRight className="text-xs" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -168,10 +169,10 @@ export default function Home() {
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
                   Build smart, personalized itineraries that adapt to your preferences. No more juggling spreadsheets or scattered notes.
                 </p>
-                <a href="#" className="read-more text-sm">
+                <Link href="/explore" className="read-more text-sm">
                   LEARN MORE
                   <FaArrowRight className="text-xs" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -184,10 +185,10 @@ export default function Home() {
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
                   Get live, context-aware navigation and local insights in real time. Your personal guide in your pocket.
                 </p>
-                <a href="#" className="read-more text-sm">
+                <Link href="/explore" className="read-more text-sm">
                   LEARN MORE
                   <FaArrowRight className="text-xs" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -200,10 +201,10 @@ export default function Home() {
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
                   Store documents, manage bookings, and collaborate with travel companions—all in one secure place.
                 </p>
-                <a href="#" className="read-more text-sm">
+                <Link href="/explore" className="read-more text-sm">
                   LEARN MORE
                   <FaArrowRight className="text-xs" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -225,6 +226,10 @@ export default function Home() {
               <p className="text-gray-700 leading-relaxed text-sm">
                 Discover Sri Lanka's most incredible destinations with Heritage Lanka. We bring together everything you need to explore the island's rich culture, ancient wonders, pristine beaches, and lush landscapes. From planning to experiencing, we've got you covered every step of the way.
               </p>
+              <Link href="/places" className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium mt-6">
+                <span>Explore All Destinations</span>
+                <FaArrowRight className="text-sm" />
+              </Link>
             </div>
 
             {/* Middle Column - Interactive Map */}
@@ -351,10 +356,10 @@ export default function Home() {
               <p className="text-gray-700 leading-relaxed mb-8">
                 Stop switching between multiple apps for itineraries, maps, budgets, and bookings. Heritage Lanka brings everything together—planning, guiding, and managing your entire Sri Lankan adventure in one seamless experience.
               </p>
-              <a href="#" className="read-more">
+              <Link href="/explore" className="read-more">
                 EXPLORE FEATURES
                 <FaArrowRight className="text-xs" />
-              </a>
+              </Link>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

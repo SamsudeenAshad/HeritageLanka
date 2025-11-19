@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Lato } from "next/font/google";
+import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass, FaStar, FaBook, FaPhotoVideo, FaSearch } from 'react-icons/fa';
 import "./globals.css";
 
 const cinzel = Cinzel({ 
@@ -43,31 +44,61 @@ export default function RootLayout({
               
               {/* Navigation Menu */}
               <div className="flex items-center gap-8">
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">Home</a>
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">About Us</a>
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">Planning a Trip</a>
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">Destinations</a>
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">Key Experiences</a>
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">Journal</a>
-                <a href="#" className="text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">Media</a>
-              </div>
-
-              {/* Search Bar */}
-              <div className="flex items-center">
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Search..." 
-                    className="w-64 px-6 py-3 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition"
-                  />
-                  <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary-600 transition">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaHome className="text-base" />
+                  <span>Home</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaInfoCircle className="text-base" />
+                  <span>About Us</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaMapMarkedAlt className="text-base" />
+                  <span>Planning a Trip</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaCompass className="text-base" />
+                  <span>Destinations</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaStar className="text-base" />
+                  <span>Key Experiences</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaBook className="text-base" />
+                  <span>Journal</span>
+                </a>
+                <a href="#" className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition text-sm uppercase tracking-wider font-medium">
+                  <FaPhotoVideo className="text-base" />
+                  <span>Media</span>
+                </a>
+        {/* Mobile Navigation - Bottom */}
+        <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-gray-200">
+          <div className="px-2 py-3">
+            <div className="flex justify-around items-center">
+              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaHome className="text-xl" />
+                <span className="text-xs">Home</span>
+              </a>
+              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaMapMarkedAlt className="text-xl" />
+                <span className="text-xs">Plan</span>
+              </a>
+              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaCompass className="text-xl" />
+                <span className="text-xs">Places</span>
+              </a>
+              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaStar className="text-xl" />
+                <span className="text-xs">Explore</span>
+              </a>
+              <a href="#" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
+                <FaSearch className="text-xl" />
+                <span className="text-xs">Search</span>
+              </a>
             </div>
+          </div>
+        </nav>div>
           </div>
         </nav>
 

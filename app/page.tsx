@@ -89,10 +89,10 @@ export default function Home() {
                   Welcome to Heritage Lanka
                 </p>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
-                  Discover Your Favorite Place with Us
+                  Your Unified Travel Companion for Sri Lanka
                 </h1>
                 <p className="text-base md:text-lg text-white leading-relaxed mb-8" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                  Travel to the any corner of the world, without going around in circles
+                  Plan, guide, and manage your perfect Sri Lankan adventure with one intelligent platform
                 </p>
                 
                 {/* Search Bar with Typing Animation */}
@@ -128,8 +128,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-2 uppercase tracking-wide leading-tight">
-                HERITAGELANKA IS BACK!
+              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 uppercase tracking-wide leading-tight">
+                ONE PLATFORM FOR YOUR ENTIRE JOURNEY
               </h2>
               <h2 className="text-5xl md:text-7xl font-serif font-bold uppercase tracking-wide leading-none">
                 HERITAGE<br/>
@@ -138,16 +138,16 @@ export default function Home() {
             </div>
             <div>
               <h3 className="text-2xl font-serif font-bold mb-4">
-                Unified Travel Platform
+                The Problem We Solve
               </h3>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                The problem is that travel information is scattered across many apps, documents, and websites.
+                Travel information is scattered across multiple apps, documents, and websites, forcing travelers to constantly switch between tools. This creates confusion, stress, and wasted time.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Our product solves this by unifying the entire travel experience into one intelligent operating system that plans, guides, and manages trips effortlessly.
+                Heritage Lanka unifies your entire travel experience into one intelligent platform that plans your trip, guides you in real time, and manages all logistics effortlessly—eliminating the chaos of juggling multiple apps.
               </p>
               <a href="#features" className="read-more">
-                ABOUT US
+                DISCOVER HOW IT WORKS
                 <FaArrowRight className="text-xs" />
               </a>
             </div>
@@ -166,10 +166,10 @@ export default function Home() {
                   The Planner
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                  Smart itineraries that adapt to your pace and preferences with AI-powered generation.
+                  Build smart, personalized itineraries that adapt to your preferences. No more juggling spreadsheets or scattered notes.
                 </p>
                 <a href="#" className="read-more text-sm">
-                  READ MORE
+                  LEARN MORE
                   <FaArrowRight className="text-xs" />
                 </a>
               </div>
@@ -182,10 +182,10 @@ export default function Home() {
                   The Guider
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                  Live, context-aware guidance with trusted local insights and real-time navigation.
+                  Get live, context-aware navigation and local insights in real time. Your personal guide in your pocket.
                 </p>
                 <a href="#" className="read-more text-sm">
-                  READ MORE
+                  LEARN MORE
                   <FaArrowRight className="text-xs" />
                 </a>
               </div>
@@ -198,10 +198,10 @@ export default function Home() {
                   The Manager
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                  Documents, bookings and collaboration all organized in one secure place.
+                  Store documents, manage bookings, and collaborate with travel companions—all in one secure place.
                 </p>
                 <a href="#" className="read-more text-sm">
-                  READ MORE
+                  LEARN MORE
                   <FaArrowRight className="text-xs" />
                 </a>
               </div>
@@ -223,10 +223,7 @@ export default function Home() {
               <p className="text-2xl font-sans font-normal mb-8">IN SRI LANKA</p>
               
               <p className="text-gray-700 leading-relaxed text-sm">
-                We want to share Sri Lanka's extraordinarily diverse and authentic story with the rest of the world. 
-                We want to help you discover the many thousands of different ways in which you can fall in love with our home 
-                &amp; plan the perfect trip: local experts, local perspective and all the best tips on where to eat, what to do, 
-                who to meet, how to get there and where to make your next favourite memory.
+                Discover Sri Lanka's most incredible destinations with Heritage Lanka. We bring together everything you need to explore the island's rich culture, ancient wonders, pristine beaches, and lush landscapes. From planning to experiencing, we've got you covered every step of the way.
               </p>
             </div>
 
@@ -318,17 +315,17 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 uppercase tracking-wide">
               CONNECT WITH<br/>
-              TRUSTED SERVICES
+              TRUSTED LOCAL SERVICES
             </h2>
-            <p className="text-lg font-serif text-white/90 tracking-wide">LOCAL GUIDES & PROVIDERS</p>
+            <p className="text-lg font-serif text-white/90 tracking-wide">VERIFIED GUIDES, TRANSPORT & MORE</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Expert Guides", desc: "Verified local experts" },
-              { title: "Transport", desc: "Reliable drivers & vehicles" },
-              { title: "Accommodation", desc: "Trusted hotels & homestays" },
-              { title: "Activities", desc: "Authentic experiences" }
+              { title: "Expert Guides", desc: "Verified local experts who know Sri Lanka intimately" },
+              { title: "Transport", desc: "Reliable drivers and comfortable vehicles" },
+              { title: "Accommodation", desc: "Trusted hotels, guesthouses & homestays" },
+              { title: "Experiences", desc: "Authentic cultural and adventure activities" }
             ].map((service, index) => (
               <div key={index} className="content-card p-6 text-center bg-white/95 hover:bg-white transition">
                 <h3 className="text-lg font-serif font-bold uppercase mb-2 tracking-wide">
@@ -348,14 +345,14 @@ export default function Home() {
             <div>
               <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-wide leading-tight">
                 ONE PLATFORM<br/>
-                ALL FEATURES
+                EVERYTHING YOU NEED
               </h2>
-              <p className="text-lg font-serif mb-6 tracking-wide">UNIFIED TRAVEL EXPERIENCE</p>
+              <p className="text-lg font-serif mb-6 tracking-wide">REPLACE ALL FRAGMENTED TOOLS</p>
               <p className="text-gray-700 leading-relaxed mb-8">
-                HeritageLanka is a unified travel platform that plans, guides, and manages trips while connecting travelers to trusted local services.
+                Stop switching between multiple apps for itineraries, maps, budgets, and bookings. Heritage Lanka brings everything together—planning, guiding, and managing your entire Sri Lankan adventure in one seamless experience.
               </p>
               <a href="#" className="read-more">
-                FIND OUT MORE
+                EXPLORE FEATURES
                 <FaArrowRight className="text-xs" />
               </a>
             </div>
@@ -365,7 +362,7 @@ export default function Home() {
                 <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
                   <div className="text-white">
                     <p className="text-xs uppercase tracking-widest mb-1">Smart</p>
-                    <h4 className="text-2xl font-serif font-bold">ITINERARIES</h4>
+                    <h4 className="text-2xl font-serif font-bold">PLANNING</h4>
                   </div>
                 </div>
               </div>
@@ -380,8 +377,8 @@ export default function Home() {
               <div className="h-64 bg-cover bg-center content-card overflow-hidden" style={{backgroundImage: 'url(/hero-bg.jpg)'}}>
                 <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
                   <div className="text-white">
-                    <p className="text-xs uppercase tracking-widest mb-1">Booking</p>
-                    <h4 className="text-2xl font-serif font-bold">MANAGER</h4>
+                    <p className="text-xs uppercase tracking-widest mb-1">Complete</p>
+                    <h4 className="text-2xl font-serif font-bold">MANAGEMENT</h4>
                   </div>
                 </div>
               </div>
@@ -389,7 +386,7 @@ export default function Home() {
                 <div className="h-full bg-black/20 hover:bg-black/30 transition flex items-end p-6">
                   <div className="text-white">
                     <p className="text-xs uppercase tracking-widest mb-1">Trusted</p>
-                    <h4 className="text-2xl font-serif font-bold">LOCALS</h4>
+                    <h4 className="text-2xl font-serif font-bold">CONNECTIONS</h4>
                   </div>
                 </div>
               </div>
@@ -403,10 +400,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 uppercase tracking-wide">
-            SIGN UP FOR UPDATES
+            START YOUR JOURNEY
           </h2>
           <p className="text-white/90 text-lg mb-12 font-light">
-            Join thousands of travelers discovering seamless exploration
+            Join travelers who've discovered stress-free exploration with Heritage Lanka
           </p>
           
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">

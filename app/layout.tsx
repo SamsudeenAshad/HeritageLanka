@@ -67,8 +67,8 @@ export default function RootLayout({
                 </Link>
               </div>
 
-              {/* Search Bar */}
-              <div className="flex items-center">
+              {/* Search Bar & Live Demo */}
+              <div className="flex items-center gap-4">
                 <div className="relative">
                   <input 
                     type="text" 
@@ -81,6 +81,12 @@ export default function RootLayout({
                     </svg>
                   </button>
                 </div>
+                
+                {/* Live Demo Button */}
+                <Link href="/live-demo" className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border border-orange-400/50">
+                  <FaPlay className="text-xs" />
+                  <span>Live Demo</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -108,6 +114,12 @@ export default function RootLayout({
               </Link>
               <Link href="/explore" className="flex flex-col items-center gap-1 text-gray-600 hover:text-primary-600 transition-colors py-2 px-3">
                 <FaCompass className="text-xl" />
+                <span className="text-xs">Explore</span>
+              </Link>
+              <Link href="/live-demo" className="flex flex-col items-center gap-1 text-orange-600 hover:text-orange-700 transition-colors py-2 px-3">
+                <FaPlay className="text-xl" />
+                <span className="text-xs font-semibold">Demo</span>
+              </Link>
                 <span className="text-xs">Explore</span>
               </Link>
             </div>

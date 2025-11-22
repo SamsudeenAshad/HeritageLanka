@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Cinzel, Lato } from "next/font/google";
-import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass, FaCalendarAlt } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaMapMarkedAlt, FaCompass, FaCalendarAlt, FaPlay } from 'react-icons/fa';
 import "./globals.css";
 
 const cinzel = Cinzel({ 
@@ -119,8 +119,6 @@ export default function RootLayout({
               <Link href="/live-demo" className="flex flex-col items-center gap-1 text-orange-600 hover:text-orange-700 transition-colors py-2 px-3">
                 <FaPlay className="text-xl" />
                 <span className="text-xs font-semibold">Demo</span>
-              </Link>
-                <span className="text-xs">Explore</span>
               </Link>
             </div>
           </div>
